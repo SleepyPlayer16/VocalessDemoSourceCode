@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://dni782xi0obdj"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Player/AfterImage.gd" id="1_7ox1q"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_ljnnt"]
+[ext_resource type="SpriteFrames" uid="uid://bc7exwssbe0cl" path="res://Characters/Karu/Sprites/spriteFrames.tres" id="1_m0ho2"]
+[ext_resource type="Texture2D" uid="uid://dma84iqlh3oi" path="res://Characters/Karu/Palettes/Pal_02.png" id="2_nrckq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_68eyc"]
+shader = ExtResource("1_ljnnt")
+shader_parameter/palette = ExtResource("2_nrckq")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cye4g"]
+blend_mode = 3
+
+[node name="AfterImage" type="AnimatedSprite2D" groups=["afterImage"]]
+visible = false
+clip_children = 2
+material = SubResource("ShaderMaterial_68eyc")
+sprite_frames = ExtResource("1_m0ho2")
+animation = &"Idle"
+script = ExtResource("1_7ox1q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_cye4g")
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 22.0
+offset_bottom = 22.0

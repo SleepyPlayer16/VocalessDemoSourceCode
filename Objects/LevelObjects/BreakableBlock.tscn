@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dl07vxsedi3mt"]
+
+[ext_resource type="Texture2D" uid="uid://s01wqv6x54w5" path="res://Sprites/StageObjects/spr_breakableBlock.png" id="1_c6wkb"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Obstacles/BreakableBlock.gd" id="2_stqou"]
+[ext_resource type="Texture2D" uid="uid://trmfbpm71fct" path="res://Sprites/StageObjects/spr_breakableIceBlock.png" id="3_5g5hd"]
+[ext_resource type="AudioStream" uid="uid://t327jyaqsy6y" path="res://Sounds/blockBreak.wav" id="3_hfoce"]
+[ext_resource type="AudioStream" uid="uid://mpmfks7wxhe6" path="res://Sounds/sfx_blockPreBreak.wav" id="4_brf4s"]
+[ext_resource type="Texture2D" uid="uid://bkev1cpv7star" path="res://Sprites/StageObjects/debris.png" id="5_sisdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bdc8r"]
+size = Vector2(32, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hqaw"]
+size = Vector2(32, 32)
+
+[node name="Breakable" type="StaticBody2D"]
+script = ExtResource("2_stqou")
+
+[node name="BreakableArea" type="Area2D" parent="."]
+position = Vector2(0, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreakableArea"]
+position = Vector2(16, 2)
+shape = SubResource("RectangleShape2D_bdc8r")
+
+[node name="BreakableBlocks0" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_c6wkb")
+centered = false
+hframes = 2
+
+[node name="BreakableBlocks1" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_5g5hd")
+centered = false
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_7hqaw")
+
+[node name="Break" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hfoce")
+volume_db = -1.5
+bus = &"SoundEffects"
+
+[node name="PreBreak" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_brf4s")
+volume_db = -2.5
+bus = &"SoundEffects"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(17, 17)
+emitting = false
+amount = 12
+lifetime = 0.3
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 1.0
+texture = ExtResource("5_sisdp")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(0, -2)
+spread = 168.22
+initial_velocity_min = 112.14
+initial_velocity_max = 289.71
+scale_amount_min = 0.2
+scale_amount_max = 1.2

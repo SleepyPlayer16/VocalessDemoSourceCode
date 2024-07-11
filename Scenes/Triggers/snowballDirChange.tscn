@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfecr8qn4g6bs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c7yc1"]
+
+[node name="SnowballDirChange" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_c7yc1")

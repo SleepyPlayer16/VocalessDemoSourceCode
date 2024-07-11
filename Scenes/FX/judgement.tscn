@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://3iwgr23dc4ir"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/judgement.gd" id="1_qoqc1"]
+[ext_resource type="Texture2D" uid="uid://c8w13vbd63m8j" path="res://Sprites/FX/spr_judgements.png" id="1_uf73x"]
+
+[node name="judgement" type="Sprite2D"]
+visible = false
+z_index = 19
+texture = ExtResource("1_uf73x")
+hframes = 3
+script = ExtResource("1_qoqc1")

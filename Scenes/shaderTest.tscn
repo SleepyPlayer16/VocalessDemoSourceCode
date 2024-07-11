@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bllolikv05dni"]
+
+[ext_resource type="Texture2D" uid="uid://dl3j6n44sgfdm" path="res://Characters/Karu/Sprites/PortraitTest.png" id="1_h0x4k"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_mgfby"]
+[ext_resource type="Texture2D" uid="uid://cwo2qrac5leqm" path="res://Characters/Karu/Palettes/pal_2.png" id="2_kpu68"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8n2l"]
+shader = ExtResource("1_mgfby")
+shader_parameter/palette = ExtResource("2_kpu68")
+
+[node name="shaderTest" type="Node2D"]
+
+[node name="PortraitTest" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_c8n2l")
+position = Vector2(478, 266)
+scale = Vector2(2, 2)
+texture = ExtResource("1_h0x4k")

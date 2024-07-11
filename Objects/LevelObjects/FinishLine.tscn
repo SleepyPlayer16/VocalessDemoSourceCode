@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/FinishLine.gd" id="1_dogvc"]
+[ext_resource type="Texture2D" uid="uid://baq5ufevye7ah" path="res://Sprites/StageObjects/spr_finish.png" id="1_xkxks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3483k"]
+size = Vector2(38, 26)
+
+[node name="FinishLine" type="Node2D"]
+script = ExtResource("1_dogvc")
+
+[node name="spr_finishLine" type="Sprite2D" parent="."]
+texture = ExtResource("1_xkxks")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="spr_finishLine"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spr_finishLine/Area2D"]
+position = Vector2(32, 16)
+shape = SubResource("RectangleShape2D_3483k")
+
+[connection signal="body_entered" from="spr_finishLine/Area2D" to="." method="_on_area_2d_body_entered"]

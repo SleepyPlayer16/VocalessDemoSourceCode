@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1bthf1dc5stk"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Enemies/blastZone.gd" id="1_d6xon"]
+[ext_resource type="Texture2D" uid="uid://cd7br4xlfjgjf" path="res://Sprites/Misc/blastZone.png" id="1_mi4yt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5ofp"]
+size = Vector2(32, 32)
+
+[node name="blastZone" type="Area2D"]
+script = ExtResource("1_d6xon")
+
+[node name="BlastZone" type="Sprite2D" parent="."]
+texture = ExtResource("1_mi4yt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_x5ofp")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

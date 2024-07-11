@@ -1,0 +1,28 @@
+[gd_resource type="Resource" script_class="SolarCityController" load_steps=3 format=3 uid="uid://7gbroaebxwc8"]
+
+[ext_resource type="AudioStream" uid="uid://byaxaa35a21t7" path="res://Music/Jet Engine.ogg" id="1_u5eqf"]
+[ext_resource type="Script" path="res://Scripts/WorldControllers/SolarCity_Controller.gd" id="2_kja81"]
+
+[resource]
+script = ExtResource("2_kja81")
+level_one_song = ExtResource("1_u5eqf")
+level_one_chart = "res://Stages/JET_CITY/data/level1-normal.json"
+level_one_hardChart = "res://Stages/JET_CITY/data/level1-hard.json"
+level_one_bpm = 145.0
+level_one_idealTime = 210.0
+level_one_idealParries = 14
+level_two_chart = ""
+level_two_hardChart = ""
+level_two_bpm = 0.0
+level_two_idealTime = 0.0
+level_two_idealParries = 0
+level_three_chart = ""
+level_three_hardChart = ""
+level_three_bpm = 0.0
+level_three_idealTime = 0.0
+level_three_idealParries = 0
+level_boss_chart = ""
+level_boss_hardChart = ""
+level_boss_bpm = 0.0
+level_boss_idealTime = 0.0
+level_boss_idealParries = 0

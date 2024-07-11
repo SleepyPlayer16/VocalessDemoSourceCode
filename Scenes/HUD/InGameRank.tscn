@@ -1,0 +1,72 @@
+[gd_scene load_steps=11 format=3 uid="uid://byb8ydi1ti6b1"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/spectrumGenerator.gd" id="1_u2lfc"]
+[ext_resource type="AudioStream" uid="uid://8wt05v7klk3d" path="res://Music/1.ogg" id="2_gc6jj"]
+[ext_resource type="Texture2D" uid="uid://b5q6uvsrl3wdj" path="res://Sprites/HUD/spr_ingameRankEffect.png" id="3_hsni4"]
+[ext_resource type="Texture2D" uid="uid://cco66i2hmqtgy" path="res://Sprites/HUD/spr_ingameRank.png" id="3_r7tsu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa2ju"]
+atlas = ExtResource("3_hsni4")
+region = Rect2(320, 0, 80, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqdjy"]
+atlas = ExtResource("3_hsni4")
+region = Rect2(400, 0, 80, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om2cw"]
+atlas = ExtResource("3_hsni4")
+region = Rect2(480, 0, 80, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkaqx"]
+atlas = ExtResource("3_hsni4")
+region = Rect2(560, 0, 80, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2xms"]
+atlas = ExtResource("3_hsni4")
+region = Rect2(0, 0, 80, 76)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hs00y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa2ju")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqdjy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om2cw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkaqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2xms")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="InGameRank" type="CanvasLayer"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(880, 80)
+script = ExtResource("1_u2lfc")
+
+[node name="SprIngameRank" type="Sprite2D" parent="Node2D"]
+show_behind_parent = true
+scale = Vector2(2, 2)
+texture = ExtResource("3_r7tsu")
+hframes = 6
+
+[node name="SprRankEffect" type="AnimatedSprite2D" parent="Node2D"]
+position = Vector2(0, 48)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_hs00y")
+frame = 4
+offset = Vector2(0, -17)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node2D"]
+stream = ExtResource("2_gc6jj")
+bus = &"Music"

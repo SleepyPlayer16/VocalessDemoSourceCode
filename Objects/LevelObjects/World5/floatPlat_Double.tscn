@@ -1,0 +1,89 @@
+[gd_scene load_steps=11 format=3 uid="uid://cxb8y5368wnqo"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Other/floatPlat_Single.gd" id="1_6br5g"]
+[ext_resource type="Texture2D" uid="uid://2xv6bhd5epiu" path="res://Sprites/FX/2dlight.png" id="1_d4fga"]
+[ext_resource type="Texture2D" uid="uid://nu50gmwbglo6" path="res://Sprites/StageObjects/spr_floatingPlatform2.png" id="1_qvw2r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j84ky"]
+atlas = ExtResource("1_qvw2r")
+region = Rect2(0, 0, 128, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn8a6"]
+atlas = ExtResource("1_qvw2r")
+region = Rect2(128, 0, 128, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3nfcr"]
+atlas = ExtResource("1_qvw2r")
+region = Rect2(256, 0, 128, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hoip"]
+atlas = ExtResource("1_qvw2r")
+region = Rect2(384, 0, 128, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4midn"]
+atlas = ExtResource("1_qvw2r")
+region = Rect2(512, 0, 128, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sfv1y"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j84ky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn8a6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3nfcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hoip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4midn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_of6rl"]
+size = Vector2(128, 18)
+
+[node name="floatPlat_Single" type="StaticBody2D"]
+script = ExtResource("1_6br5g")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(33, 14)
+scale = Vector2(0.21875, 0.21875)
+color = Color(0, 1, 1, 1)
+energy = 0.45
+range_layer_min = -1
+texture = ExtResource("1_d4fga")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(96, 14)
+scale = Vector2(0.21875, 0.21875)
+color = Color(0, 1, 1, 1)
+energy = 0.45
+range_layer_min = -1
+texture = ExtResource("1_d4fga")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 0
+sprite_frames = SubResource("SpriteFrames_sfv1y")
+autoplay = "default"
+frame_progress = 0.999764
+speed_scale = 2.0
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(64, 9)
+shape = SubResource("RectangleShape2D_of6rl")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(72, -80)
+scale = Vector2(17.6, 61.6)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://camkvlv7htbrs"]
+
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_xa2m1"]
+[ext_resource type="Texture2D" uid="uid://ccawq7x1bpsc5" path="res://Characters/Lane/Palettes/pal_0.png" id="2_insbr"]
+[ext_resource type="SpriteFrames" uid="uid://de3jk07tbp30x" path="res://Characters/Lane/sprites/spriteFramesLane.tres" id="3_dxepi"]
+[ext_resource type="Texture2D" uid="uid://ctcbgcb41up3c" path="res://Sprites/Misc/spr_altItems.png" id="4_ttllg"]
+[ext_resource type="Texture2D" uid="uid://cwjlkhn7g6o5o" path="res://Sprites/FX/spr_chargeEffect.png" id="5_6xnr1"]
+[ext_resource type="Texture2D" uid="uid://cp4l2ogdkoa0n" path="res://Sprites/FX/WalkParticle.png" id="6_xux6w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpogc"]
+shader = ExtResource("1_xa2m1")
+shader_parameter/palette = ExtResource("2_insbr")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xrjhk"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_uuivp"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e2kgi"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_r34bn"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Lane" type="AnimatedSprite2D"]
+clip_children = 2
+material = SubResource("ShaderMaterial_gpogc")
+sprite_frames = ExtResource("3_dxepi")
+animation = &"Jump"
+frame = 1
+frame_progress = 1.0
+offset = Vector2(0, -4)
+
+[node name="PhantomBoostEffect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_xrjhk")
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 18.0
+color = Color(0.0117647, 0.807843, 0.741176, 0)
+
+[node name="SprAltItems" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(-11, -14)
+texture = ExtResource("4_ttllg")
+centered = false
+hframes = 3
+
+[node name="chargeEffect" type="CPUParticles2D" parent="."]
+visible = false
+modulate = Color(0, 0.615686, 1, 0.129412)
+material = SubResource("CanvasItemMaterial_uuivp")
+amount = 64
+preprocess = 2.0
+speed_scale = 1.2
+texture = ExtResource("5_6xnr1")
+emission_shape = 3
+emission_rect_extents = Vector2(32, 64)
+spread = 180.0
+gravity = Vector2(0, -90)
+
+[node name="chargeSteam" type="CPUParticles2D" parent="."]
+show_behind_parent = true
+z_index = -1
+material = SubResource("CanvasItemMaterial_e2kgi")
+position = Vector2(0, -11)
+emitting = false
+amount = 16
+texture = ExtResource("6_xux6w")
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2(0, -500)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+radial_accel_min = -50.0
+radial_accel_max = 50.0
+angle_min = -252.5
+angle_max = 204.7
+scale_amount_min = 0.5
+color = Color(0.733333, 1, 1, 1)
+hue_variation_min = -0.13
+hue_variation_curve = SubResource("Curve_r34bn")
+anim_speed_min = 2.0
+anim_speed_max = 4.0

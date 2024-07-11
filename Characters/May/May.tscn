@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cy0o4qa7rdc6p"]
+
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_v4yqa"]
+[ext_resource type="Texture2D" uid="uid://bsx350ogug0ds" path="res://Characters/May/Palettes/pal_0.png" id="2_1pgnf"]
+[ext_resource type="SpriteFrames" uid="uid://bgscound5b8is" path="res://Characters/May/Sprites/spriteFrames.tres" id="3_au2im"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_77p36"]
+shader = ExtResource("1_v4yqa")
+shader_parameter/palette = ExtResource("2_1pgnf")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_v8c3k"]
+blend_mode = 1
+
+[node name="May" type="AnimatedSprite2D"]
+clip_children = 2
+material = SubResource("ShaderMaterial_77p36")
+sprite_frames = ExtResource("3_au2im")
+animation = &"DropKick"
+offset = Vector2(0, -4)
+
+[node name="PhantomBoostEffect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_v8c3k")
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 18.0
+color = Color(0.0117647, 0.807843, 0.741176, 0)

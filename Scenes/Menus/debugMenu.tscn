@@ -1,0 +1,327 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxjs1hom3x7se"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/debugMenu.gd" id="1_7kai8"]
+[ext_resource type="AudioStream" uid="uid://d0m01a0jysb7b" path="res://Music/DancingInTheWind.ogg" id="1_dg00m"]
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="2_kuqkd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2a8ok"]
+bg_color = Color(0.231373, 0.247059, 0.666667, 1)
+
+[node name="DebugMenu" type="Node2D"]
+script = ExtResource("1_7kai8")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_dg00m")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 960.0
+offset_bottom = 540.0
+pivot_offset = Vector2(480, 270)
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Text4" type="RichTextLabel" parent="Control"]
+clip_contents = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -174.0
+offset_top = -222.0
+offset_right = 176.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.960784, 0.964706, 0.956863, 1)
+theme_override_colors/font_outline_color = Color(0.12549, 0.25098, 0.392157, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/normal_font = ExtResource("2_kuqkd")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]DEBUG MENU[/wave]"
+
+[node name="Text" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 200.0
+offset_right = 39.0
+offset_bottom = 240.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 0.34902, 1)
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Select level[/wave]"
+
+[node name="Text2" type="RichTextLabel" parent="Control"]
+layout_mode = 2
+offset_left = 176.0
+offset_top = 302.602
+offset_right = 304.0
+offset_bottom = 346.602
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 0.34902, 1)
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Select Character[/wave]"
+
+[node name="particles" type="RichTextLabel" parent="Control"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 29.0
+offset_right = 192.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 0.34902, 1)
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Player effects
+[/wave]"
+
+[node name="particles4" type="RichTextLabel" parent="Control"]
+layout_mode = 2
+offset_left = 712.0
+offset_top = 29.0
+offset_right = 840.0
+offset_bottom = 73.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 0.34902, 1)
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Debug controls
+[/wave]"
+
+[node name="particles2" type="RichTextLabel" parent="Control"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 120.0
+offset_right = 192.0
+offset_bottom = 164.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 0.34902, 1)
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Beat Hits[/wave]"
+
+[node name="particles3" type="RichTextLabel" parent="Control"]
+layout_mode = 2
+offset_left = 64.0
+offset_top = 224.0
+offset_right = 192.0
+offset_bottom = 268.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 0.34902, 1)
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Rhythm system[/wave]"
+
+[node name="Text3" type="RichTextLabel" parent="Control"]
+layout_mode = 2
+offset_left = 659.5
+offset_top = 302.602
+offset_right = 787.5
+offset_bottom = 346.602
+grow_horizontal = 2
+theme_override_colors/default_color = Color(1, 1, 0.34902, 1)
+bbcode_enabled = true
+text = "[wave amp=50.0 freq=5.0 connected=1]Select Difficulty[/wave]"
+
+[node name="Ready" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 382.0
+offset_top = -84.0
+offset_right = -381.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_2a8ok")
+text = "Ready"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -179.5
+offset_top = 238.602
+offset_right = 179.5
+offset_bottom = 269.602
+grow_horizontal = 2
+
+[node name="SolarCity" type="MenuButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Solar City"
+item_count = 1
+popup/item_0/text = "Level 1"
+popup/item_0/id = 0
+
+[node name="DragoniaForest" type="MenuButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Dragonia Forest
+"
+item_count = 1
+popup/item_0/text = "Level 1"
+popup/item_0/id = 0
+
+[node name="Frostfall" type="MenuButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Frostfall
+"
+item_count = 2
+popup/item_0/text = "Level 1"
+popup/item_0/id = 0
+popup/item_1/text = "Level 2"
+popup/item_1/id = 1
+
+[node name="JetCity" type="MenuButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Jet City
+"
+item_count = 1
+popup/item_0/text = "Level 1"
+popup/item_0/id = 0
+
+[node name="Tutorial" type="MenuButton" parent="Control/HBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+item_count = 1
+popup/item_0/text = "Level 1"
+popup/item_0/id = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 72.6016
+offset_bottom = 116.602
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CharaBtn" type="OptionButton" parent="Control/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+item_count = 7
+selected = 0
+popup/item_0/text = "Karu"
+popup/item_0/id = 0
+popup/item_1/text = "Froo"
+popup/item_1/id = 1
+popup/item_2/text = "Liz"
+popup/item_2/id = 2
+popup/item_3/text = "May"
+popup/item_3/id = 3
+popup/item_4/text = "Nix"
+popup/item_4/id = 4
+popup/item_5/text = "Lane"
+popup/item_5/id = 5
+popup/item_6/text = "Applesauce"
+popup/item_6/id = 6
+
+[node name="DiffBtn" type="OptionButton" parent="Control/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 6
+item_count = 2
+selected = 0
+popup/item_0/text = "Normal"
+popup/item_0/id = 0
+popup/item_1/text = "Hard"
+popup/item_1/id = 1
+
+[node name="World" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 456.0
+offset_right = 368.0
+offset_bottom = 496.0
+text = "World"
+
+[node name="Character" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 480.0
+offset_right = 376.0
+offset_bottom = 520.0
+text = "Character"
+
+[node name="Difficulty" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 504.0
+offset_right = 376.0
+offset_bottom = 544.0
+text = "Difficulty"
+
+[node name="effectsOption" type="OptionButton" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 72.0
+offset_right = 184.0
+offset_bottom = 100.0
+item_count = 2
+selected = 0
+popup/item_0/text = "Enabled"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled"
+popup/item_1/id = 1
+
+[node name="debugControls" type="OptionButton" parent="Control"]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 72.0
+offset_right = 832.0
+offset_bottom = 103.0
+item_count = 2
+selected = 1
+popup/item_0/text = "Enabled"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled"
+popup/item_1/id = 1
+
+[node name="beatOption" type="OptionButton" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 164.0
+offset_right = 184.0
+offset_bottom = 195.0
+item_count = 2
+selected = 0
+popup/item_0/text = "Enabled"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled"
+popup/item_1/id = 1
+
+[node name="rhythmOption" type="OptionButton" parent="Control"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 256.0
+offset_right = 184.0
+offset_bottom = 287.0
+item_count = 2
+selected = 0
+popup/item_0/text = "Enabled"
+popup/item_0/id = 0
+popup/item_1/text = "Disabled"
+popup/item_1/id = 1
+
+[connection signal="pressed" from="Control/Ready" to="." method="_on_ready_pressed"]
+[connection signal="item_selected" from="Control/effectsOption" to="." method="_on_effects_option_item_selected"]
+[connection signal="item_selected" from="Control/debugControls" to="." method="_on_debug_controls_item_selected"]
+[connection signal="item_selected" from="Control/beatOption" to="." method="_on_beat_option_item_selected"]
+[connection signal="item_selected" from="Control/rhythmOption" to="." method="_on_rhythm_option_item_selected"]

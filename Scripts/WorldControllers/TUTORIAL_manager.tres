@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SolarCityController" load_steps=4 format=3 uid="uid://cxiw6n28ihsly"]
+
+[ext_resource type="AudioStream" uid="uid://cmhe1ojtf7l24" path="res://Music/mus_tutorialNEW.ogg" id="1_f58ls"]
+[ext_resource type="AudioStream" uid="uid://dgkdqbhg13h5x" path="res://Music/mus_mayTutorial.ogg" id="2_hcurn"]
+[ext_resource type="Script" path="res://Scripts/WorldControllers/SolarCity_Controller.gd" id="2_u0lck"]
+
+[resource]
+script = ExtResource("2_u0lck")
+level_one_song = ExtResource("1_f58ls")
+level_one_chart = "res://Stages/World_Tutorial/data/level1-normal.json"
+level_one_hardChart = "res://Stages/World_Tutorial/data/level1-hard.json"
+level_one_bpm = 115.0
+level_one_idealTime = 9999.0
+level_one_idealParries = 1
+level_two_song = ExtResource("2_hcurn")
+level_two_chart = "res://Stages/World_Tutorial/data/level2-normal.json"
+level_two_hardChart = "res://Stages/World_Tutorial/data/level2-normal.json"
+level_two_bpm = 128.0
+level_two_idealTime = 9999.0
+level_two_idealParries = 1
+level_three_chart = ""
+level_three_hardChart = ""
+level_three_bpm = 0.0
+level_three_idealTime = 0.0
+level_three_idealParries = 0
+level_boss_chart = ""
+level_boss_hardChart = ""
+level_boss_bpm = 0.0
+level_boss_idealTime = 0.0
+level_boss_idealParries = 0

@@ -1,0 +1,218 @@
+[gd_scene load_steps=18 format=3 uid="uid://cvuas6juycnfp"]
+
+[ext_resource type="Texture2D" uid="uid://b4td4iw8ugtgh" path="res://Sprites/Intro/8.png" id="1_3o5qn"]
+[ext_resource type="Texture2D" uid="uid://doeawmebxqstr" path="res://Sprites/Intro/12.png" id="1_lo5ig"]
+[ext_resource type="Script" path="res://Scripts/Systems/trailerScene.gd" id="1_qwg7u"]
+[ext_resource type="Texture2D" uid="uid://bm6puxxnqroa4" path="res://Sprites/Intro/13.png" id="3_nxq7t"]
+[ext_resource type="Texture2D" uid="uid://b02tyq74xadr2" path="res://Sprites/Menu/spr_menu_logo.png" id="5_fs2ge"]
+[ext_resource type="Texture2D" uid="uid://cbpef64cfpup3" path="res://Sprites/Menu/spr_ksDemo.png" id="6_tpaip"]
+[ext_resource type="Texture2D" uid="uid://cdirus2gj1orf" path="res://Sprites/Menu/spr_ksDATE.png" id="7_emtwk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8u1t"]
+atlas = ExtResource("1_lo5ig")
+region = Rect2(254, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj3oy"]
+atlas = ExtResource("1_3o5qn")
+region = Rect2(0, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cu1ys"]
+atlas = ExtResource("3_nxq7t")
+region = Rect2(0, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siwqb"]
+atlas = ExtResource("3_nxq7t")
+region = Rect2(254, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3q22b"]
+atlas = ExtResource("3_nxq7t")
+region = Rect2(508, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ira68"]
+atlas = ExtResource("3_nxq7t")
+region = Rect2(762, 0, 254, 284)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4130r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8u1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8u1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8u1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8u1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8u1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8u1t")
+}],
+"loop": false,
+"name": &"close",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj3oy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cu1ys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siwqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3q22b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ira68")
+}],
+"loop": false,
+"name": &"vanish",
+"speed": 8.0
+}]
+
+[sub_resource type="Animation" id="Animation_l71cn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SprMenuLogo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(480, -136)]
+}
+
+[sub_resource type="Animation" id="Animation_315l2"]
+resource_name = "scroll"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(0.31864, 1),
+"update": 0,
+"values": [Vector2(480, 280), Vector2(480, 456)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SprMenuLogo:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.8, 1.9),
+"transitions": PackedFloat32Array(0.148651, 1),
+"update": 0,
+"values": [Vector2(480, -136), Vector2(480, 80)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ms3un"]
+_data = {
+"RESET": SubResource("Animation_l71cn"),
+"scroll": SubResource("Animation_315l2")
+}
+
+[node name="TrailerScene" type="Node2D"]
+script = ExtResource("1_qwg7u")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -51.0
+offset_top = -22.0
+offset_right = 1000.0
+offset_bottom = 551.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 280)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_4130r")
+animation = &"vanish"
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ms3un")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.08
+
+[node name="SprMenuLogo" type="Sprite2D" parent="."]
+position = Vector2(480, -136)
+scale = Vector2(2, 2)
+texture = ExtResource("5_fs2ge")
+
+[node name="SprKsDemo" type="Sprite2D" parent="SprMenuLogo"]
+position = Vector2(8, 40)
+texture = ExtResource("6_tpaip")
+
+[node name="SprKsLiveNow" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(0, 56)
+scale = Vector2(2, 2)
+texture = ExtResource("7_emtwk")
+centered = false
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

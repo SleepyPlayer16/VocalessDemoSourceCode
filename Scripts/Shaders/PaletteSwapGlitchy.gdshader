@@ -1,0 +1,41 @@
+shader_type canvas_item;
+
+uniform sampler2D palette: filter_nearest, repeat_disable;
+uniform vec2 resolution = vec2(64.0, 64.0);
+uniform float noise : hint_range(0.0, 1.0) = 0.2;
+uniform float distort : hint_range(0.0, 1.0) = 0.06;
+uniform float offset : hint_range(0.0, 1.0) = 0.0;
+uniform float speed : hint_range(0.0, 50.0) = 0.0;
+uniform float glitchFrequency : hint_range(0.0, 5.0) = 0.0;
+
+vec2 random(vec2 uv){
+    uv = vec2(dot(uv, vec2(127.1,311.7)), dot(uv, vec2(269.5,183.3)));
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float between(float lower, float upper, float value) {
+	return step(lower, value) * step(value, upper);
+}
+
+void fragment() {
+	
+	vec2 uv = UV;
+	// Distort
+	float oy = offset / 10.;
+	float dist = (distort * clamp(offset / 2., 0.25, 0.75));
+	uv.x += dist * between(0.7, 0.8, fract(offset + TIME/4.)) * between(0.4, 0.41 + oy, uv.y);
+	uv.x -= dist * between(0.1, 0.15, fract(offset + TIME/3.)) * between(0.7, 0.71 + oy, uv.y);
+	uv.x += dist * between(0.15, 0.25, fract(offset + TIME/3.)) * between(0.6, 0.61 + oy, uv.y);
+	uv.x += dist * between(0.5, 0.55, fract(offset + TIME/7.)) * between(0.5, 0.73 - oy, uv.y);
+    vec4 rgba = texture(TEXTURE, uv);
+    vec4 final_color = texture(palette, vec2(rgba.r, rgba.g));
+    final_color.a *= COLOR.a; // multiply the alpha channels
+	vec4 pxl = final_color;
+	pxl.rgb += clamp(random((ceil(UV * resolution) / resolution) + trunc(fract(TIME) * (4. + speed))).x, 0.0, 1.0) * noise;
+	// Shade
+	COLOR = pxl;
+}
+
+void light() {
+	// Called for every pixel for every light affecting the material.
+}

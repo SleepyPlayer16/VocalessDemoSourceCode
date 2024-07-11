@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://4u0e2fk8e3g1"]
+
+[ext_resource type="AudioStream" uid="uid://cdfyxkvkuh4fp" path="res://Sounds/block_appear.wav" id="1_3glgs"]
+[ext_resource type="Texture2D" uid="uid://bhjiacxh3r2b5" path="res://Sprites/StageObjects/spr_greenBlock.png" id="2_wj7tq"]
+[ext_resource type="Script" path="res://Scripts/Systems/ColorBlock.gd" id="3_1hmvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xsfd"]
+size = Vector2(48, 32)
+
+[node name="ColorBlock1" type="Node2D"]
+script = ExtResource("3_1hmvg")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_3glgs")
+volume_db = 21.812
+max_distance = 500.0
+bus = &"SoundEffects"
+
+[node name="SprGreenBlock" type="Sprite2D" parent="."]
+texture = ExtResource("2_wj7tq")
+hframes = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_8xsfd")

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="SongList" load_steps=2 format=3 uid="uid://dtj58je5d5cbw"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/CharacterList.gd" id="1_14p66"]
+
+[resource]
+script = ExtResource("1_14p66")
+characters = [{
+"character_name": "Karu",
+"class": "Dasher",
+"portrait_path": "res://Characters/Karu/Sprites/PortraitTest.png"
+}, {
+"character_name": "Froo",
+"class": "Dasher",
+"portrait_path": "res://Characters/Froo/sprites/portrait.png"
+}, {
+"character_name": "Liz",
+"class": "Dasher",
+"portrait_path": "res://Characters/Liz/Sprites/Portrait.png"
+}, {
+"character_name": "Nix",
+"class": "Dasher",
+"portrait_path": "res://Characters/Nix/Sprites/Portrait.png"
+}, {
+"character_name": "May",
+"class": "Dasher",
+"portrait_path": "res://Characters/May/Sprites/Portrait.png"
+}, {
+"character_name": "Lane",
+"class": "Charge",
+"portrait_path": "res://Characters/Lane/sprites/portrait.png"
+}, {
+"character_name": "Applesauce",
+"class": "Gunner",
+"portrait_path": "res://Characters/Applesauce/sprites/portrait.png"
+}]

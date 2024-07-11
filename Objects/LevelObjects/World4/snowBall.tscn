@@ -1,0 +1,210 @@
+[gd_scene load_steps=28 format=3 uid="uid://cnijftggefpun"]
+
+[ext_resource type="Texture2D" uid="uid://dey546agd0dbd" path="res://Characters/Other/spr_snowBallEmpty_size_1.png" id="1_0j08y"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Other/snowBall.gd" id="1_cq3ay"]
+[ext_resource type="Texture2D" uid="uid://dje5rld5uoyja" path="res://Characters/Other/spr_inSnowBall_size_2.png" id="3_j4hnb"]
+[ext_resource type="Texture2D" uid="uid://bac7jmtu3babs" path="res://Characters/Other/spr_InSnowBall_size_1.png" id="3_p3t8s"]
+[ext_resource type="Texture2D" uid="uid://cf5pi32b1sx2o" path="res://Sprites/FX/spr_horizontalSpeedLines.png" id="4_o7qce"]
+[ext_resource type="AudioStream" uid="uid://4gfumbbqvw5o" path="res://Sounds/sfx_snowBallBreak.wav" id="6_flvda"]
+[ext_resource type="AudioStream" uid="uid://bv6gg7oaawxro" path="res://Sounds/clapAlt.wav" id="7_uroj2"]
+[ext_resource type="AudioStream" uid="uid://dcapap46k52bh" path="res://Sounds/sfx_trip.wav" id="8_48ipt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0wkc"]
+atlas = ExtResource("1_0j08y")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mj2r0"]
+atlas = ExtResource("1_0j08y")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxn6r"]
+atlas = ExtResource("1_0j08y")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob3nh"]
+atlas = ExtResource("1_0j08y")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikjgv"]
+atlas = ExtResource("3_p3t8s")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocogf"]
+atlas = ExtResource("3_p3t8s")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kp574"]
+atlas = ExtResource("3_p3t8s")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3moba"]
+atlas = ExtResource("3_p3t8s")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blcl4"]
+atlas = ExtResource("3_j4hnb")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h0n3"]
+atlas = ExtResource("3_j4hnb")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv6s0"]
+atlas = ExtResource("3_j4hnb")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nbmas"]
+atlas = ExtResource("3_j4hnb")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6k2a6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0wkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mj2r0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxn6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob3nh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikjgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocogf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kp574")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3moba")
+}],
+"loop": true,
+"name": &"playerTrapped_size1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blcl4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h0n3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv6s0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nbmas")
+}],
+"loop": true,
+"name": &"playerTrapped_size2",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_04y2a"]
+atlas = ExtResource("4_o7qce")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj3es"]
+atlas = ExtResource("4_o7qce")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viye3"]
+atlas = ExtResource("4_o7qce")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tms8n"]
+atlas = ExtResource("4_o7qce")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jwaox"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_04y2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj3es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_viye3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tms8n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6erow"]
+radius = 18.0
+
+[node name="snowBall" type="Node2D"]
+script = ExtResource("1_cq3ay")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(2, 0.48)
+sprite_frames = SubResource("SpriteFrames_6k2a6")
+autoplay = "default"
+speed_scale = 2.0
+
+[node name="Speedlines" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(-33, 0)
+sprite_frames = SubResource("SpriteFrames_jwaox")
+autoplay = "default"
+frame_progress = 0.239039
+speed_scale = 2.0
+
+[node name="SnowBallArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SnowBallArea"]
+shape = SubResource("CircleShape2D_6erow")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 32
+lifetime = 2.0
+one_shot = true
+speed_scale = 2.68
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 38.05
+direction = Vector2(1, -90)
+gravity = Vector2(0, 90)
+initial_velocity_max = 114.04
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color = Color(0.768627, 0.933333, 1, 1)
+
+[node name="Break" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_flvda")
+volume_db = 3.0
+bus = &"SoundEffects"
+
+[node name="Metronome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_uroj2")
+volume_db = -2.0
+bus = &"SoundEffects"
+
+[node name="Trip" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_48ipt")
+volume_db = -2.0
+bus = &"SoundEffects"
+
+[connection signal="area_entered" from="SnowBallArea" to="." method="_on_snow_ball_area_area_entered"]
+[connection signal="body_entered" from="SnowBallArea" to="." method="_on_snow_ball_area_body_entered"]

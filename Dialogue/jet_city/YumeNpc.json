@@ -1,0 +1,59 @@
+[
+  { "CharacterLeft": "Karu", "CharacterRight": "Yume" },
+  {
+	"Name": "Yume",
+	"SecondaryName": "",
+	"Text": "...",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Yume",
+	"SecondaryName": "",
+	"Text": "We don't usually get visitors from other cities.",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Yume",
+	"SecondaryName": "",
+	"Text": "And when we do, I just get rid of them, this is no place for games.",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Yume",
+	"SecondaryName": "",
+	"Text": "I will let it slide this time because I know you're quite famous.",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+		"Name": "Yume",
+	"SecondaryName": "",
+	"Text": "But don't you dare show your face around here ever again.",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Karu",
+	"SecondaryName": "",
+	"Text": "...",
+	"Emotion": "Neutral",
+	"Side": "Left",
+	"offset": 0
+  },
+  {
+	"Name": "Yume",
+	"SecondaryName": "",
+	"Text": "No response huh? Go away before I change my mind.",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+]

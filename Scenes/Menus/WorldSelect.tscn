@@ -1,0 +1,238 @@
+[gd_scene load_steps=26 format=3 uid="uid://cfwwdeujc3t7v"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/WorldSelect.gd" id="1_fx8qn"]
+[ext_resource type="Texture2D" uid="uid://dhf8iwkpjatx0" path="res://Sprites/Tilesets/World_SolarCity/Backgrounds/SkyNoMountains.png" id="1_jsara"]
+[ext_resource type="Texture2D" uid="uid://bqpfc7vi1gq74" path="res://Sprites/Menu/spr_worldSelectTextBackground.png" id="2_oqxhn"]
+[ext_resource type="Texture2D" uid="uid://b8c67c1n4sdng" path="res://Sprites/Menu/spr_dragoniaBack.png" id="3_wai2x"]
+[ext_resource type="Texture2D" uid="uid://d0esi7t2qu7fj" path="res://Sprites/Menu/spr_worldSelect.png" id="3_wpk3c"]
+[ext_resource type="Texture2D" uid="uid://bv8gmkiv828k2" path="res://Sprites/Menu/spr_frostfallBack.png" id="4_1xwy3"]
+[ext_resource type="Texture2D" uid="uid://u4402holgauc" path="res://Sprites/Menu/spr_worldBackColorThing.png" id="4_l8nyc"]
+[ext_resource type="Texture2D" uid="uid://w22gg5up850c" path="res://Sprites/Menu/spr_jetCityBack.png" id="5_28qi7"]
+[ext_resource type="Texture2D" uid="uid://dy8i8vw0mgkvp" path="res://Sprites/Menu/spr_worlds.png" id="5_wlb31"]
+[ext_resource type="Texture2D" uid="uid://b0jw3ol4nkdmq" path="res://Sprites/Menu/spr_worldNames_EN.png" id="6_as8fj"]
+[ext_resource type="Texture2D" uid="uid://vgwhc3usxghl" path="res://Sprites/Menu/spr_arrow.png" id="7_gm8t0"]
+[ext_resource type="Texture2D" uid="uid://brohogjkbib74" path="res://Sprites/Menu/spr_levelSelect.png" id="12_pgdb7"]
+[ext_resource type="Texture2D" uid="uid://bm71uu7wsrxo1" path="res://Sprites/Menu/spr_difficulties.png" id="13_osxwu"]
+[ext_resource type="Texture2D" uid="uid://74was2yb6wux" path="res://Sprites/Menu/spr_characterBackColorThing.png" id="13_wc58a"]
+[ext_resource type="Texture2D" uid="uid://dquxje6w5aw0n" path="res://Sprites/Menu/spr_characterSelectText.png" id="14_jbncd"]
+[ext_resource type="Texture2D" uid="uid://curqvog0lrg23" path="res://Sprites/Menu/spr_loading.png" id="16_r45dx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gegtj"]
+atlas = ExtResource("16_r45dx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cy51"]
+atlas = ExtResource("16_r45dx")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v27ay"]
+atlas = ExtResource("16_r45dx")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na86f"]
+atlas = ExtResource("16_r45dx")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ficev"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gegtj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6cy51")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v27ay")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na86f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_krnrv"]
+resource_name = "EnterScene"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uyjqj"]
+resource_name = "ExitScene"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ur1yv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mtvnw"]
+_data = {
+"EnterScene": SubResource("Animation_krnrv"),
+"ExitScene": SubResource("Animation_uyjqj"),
+"RESET": SubResource("Animation_ur1yv")
+}
+
+[node name="WorldSelect" type="Node2D"]
+script = ExtResource("1_fx8qn")
+
+[node name="LvlBackgrounds" type="Node2D" parent="."]
+
+[node name="SkyNoMountains" type="Sprite2D" parent="LvlBackgrounds"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_jsara")
+centered = false
+
+[node name="SprDragoniaBack" type="Sprite2D" parent="LvlBackgrounds"]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("3_wai2x")
+centered = false
+
+[node name="SprFrostfallBack" type="Sprite2D" parent="LvlBackgrounds"]
+visible = false
+scale = Vector2(2, 2)
+texture = ExtResource("4_1xwy3")
+centered = false
+
+[node name="SprJetCityBack" type="Sprite2D" parent="LvlBackgrounds"]
+visible = false
+position = Vector2(960, 32)
+scale = Vector2(-2, 2)
+texture = ExtResource("5_28qi7")
+centered = false
+
+[node name="SprWorldSelectTextBackground" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_oqxhn")
+centered = false
+
+[node name="SprWorldSelect" type="Sprite2D" parent="."]
+position = Vector2(-432, 24)
+texture = ExtResource("3_wpk3c")
+centered = false
+
+[node name="SprLevelSelect" type="Sprite2D" parent="."]
+position = Vector2(-432, 24)
+scale = Vector2(2, 2)
+texture = ExtResource("12_pgdb7")
+centered = false
+
+[node name="WorldMenu" type="Node2D" parent="."]
+
+[node name="SprWorldBackColorThing" type="Sprite2D" parent="WorldMenu"]
+position = Vector2(304, 108)
+scale = Vector2(2, 2)
+texture = ExtResource("4_l8nyc")
+centered = false
+hframes = 4
+
+[node name="SprWorlds" type="Sprite2D" parent="WorldMenu"]
+position = Vector2(352, 156)
+scale = Vector2(2, 2)
+texture = ExtResource("5_wlb31")
+centered = false
+hframes = 4
+
+[node name="SprWorldNamesEn" type="Sprite2D" parent="WorldMenu"]
+position = Vector2(352, 356)
+scale = Vector2(2, 2)
+texture = ExtResource("6_as8fj")
+centered = false
+hframes = 4
+
+[node name="SprArrow" type="Sprite2D" parent="WorldMenu"]
+position = Vector2(654, 250)
+scale = Vector2(2, 2)
+texture = ExtResource("7_gm8t0")
+centered = false
+
+[node name="SprArrow2" type="Sprite2D" parent="WorldMenu"]
+position = Vector2(304, 250)
+rotation = 3.14159
+scale = Vector2(2, -2)
+texture = ExtResource("7_gm8t0")
+centered = false
+
+[node name="SprDifficulties" type="Sprite2D" parent="."]
+position = Vector2(222, 468)
+scale = Vector2(2, 2)
+texture = ExtResource("13_osxwu")
+centered = false
+hframes = 2
+
+[node name="LevelSelect" type="Node2D" parent="."]
+position = Vector2(0, 176)
+
+[node name="CharacterMenu" type="Node2D" parent="."]
+visible = false
+
+[node name="SprCharacterSelect" type="Sprite2D" parent="CharacterMenu"]
+position = Vector2(-592, 24)
+scale = Vector2(2, 2)
+texture = ExtResource("14_jbncd")
+centered = false
+
+[node name="SprWorldBackColorThing" type="Sprite2D" parent="CharacterMenu"]
+position = Vector2(304, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("13_wc58a")
+centered = false
+hframes = 4
+
+[node name="Characters" type="Node2D" parent="CharacterMenu"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LoadingCircle" type="AnimatedSprite2D" parent="ColorRect"]
+visible = false
+position = Vector2(816, 392)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_ficev")
+autoplay = "default"
+frame_progress = 0.120417
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mtvnw")
+}
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

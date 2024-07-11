@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://byaxaa35a21t7"
+path="res://godot/imported/Jet Engine.ogg-7a909c33900fe5b9c0257ce32622ea96.oggvorbisstr"
+
+[deps]
+
+source_file="res://Music/Jet Engine.ogg"
+dest_files=["res://godot/imported/Jet Engine.ogg-7a909c33900fe5b9c0257ce32622ea96.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

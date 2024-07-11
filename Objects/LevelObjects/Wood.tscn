@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://blkjb4ty2o830"]
+
+[ext_resource type="Texture2D" uid="uid://dlp8btmnj5rkm" path="res://Sprites/Misc/spr_woodPlank.png" id="1_fs8x3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_obj1d"]
+
+[node name="Wood" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_obj1d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_fs8x3")

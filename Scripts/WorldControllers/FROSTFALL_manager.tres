@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="SolarCityController" load_steps=4 format=3 uid="uid://c3wpc4p5li3ep"]
+
+[ext_resource type="AudioStream" uid="uid://chvrhtyuc0yks" path="res://Music/snow1Final.ogg" id="1_h8267"]
+[ext_resource type="AudioStream" uid="uid://dqweddi0wrwd6" path="res://Music/snow2Final.ogg" id="1_jkmt1"]
+[ext_resource type="Script" path="res://Scripts/WorldControllers/SolarCity_Controller.gd" id="2_m5dml"]
+
+[resource]
+script = ExtResource("2_m5dml")
+level_one_song = ExtResource("1_h8267")
+level_one_chart = "res://Stages/FROSTFALL/data/level1-normal.json"
+level_one_hardChart = "res://Stages/FROSTFALL/data/level1-hard.json"
+level_one_bpm = 150.0
+level_one_idealTime = 215.0
+level_one_idealParries = 18
+level_two_song = ExtResource("1_jkmt1")
+level_two_chart = "res://Stages/FROSTFALL/data/level2-normal.json"
+level_two_hardChart = "res://Stages/FROSTFALL/data/level2-hard.json"
+level_two_bpm = 140.0
+level_two_idealTime = 125.0
+level_two_idealParries = 18
+level_three_chart = ""
+level_three_hardChart = ""
+level_three_bpm = 0.0
+level_three_idealTime = 0.0
+level_three_idealParries = 0
+level_boss_chart = ""
+level_boss_hardChart = ""
+level_boss_bpm = 0.0
+level_boss_idealTime = 0.0
+level_boss_idealParries = 0

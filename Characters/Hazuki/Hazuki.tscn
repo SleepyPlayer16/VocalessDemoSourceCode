@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsi58ebfqe8op"]
+
+[ext_resource type="SpriteFrames" uid="uid://cbk2t1dba4rm4" path="res://Characters/Hazuki/Sprites/spriteFrames.tres" id="1_oowtw"]
+
+[node name="Hazuki" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_oowtw")
+animation = &"Idle"

@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://fb4kt7etu3p0"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Other/alternateKillScene.gd" id="1_k1akl"]
+[ext_resource type="Texture2D" uid="uid://d25lkpcvugjol" path="res://Sprites/HUD/spr_bKill.png" id="1_k405q"]
+[ext_resource type="FontFile" uid="uid://dnncxrvsc2lcy" path="res://Fonts/Retron2000.ttf" id="2_fumto"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tm2sf"]
+atlas = ExtResource("1_k405q")
+region = Rect2(0, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5uuj"]
+atlas = ExtResource("1_k405q")
+region = Rect2(480, 0, 480, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7iml4"]
+atlas = ExtResource("1_k405q")
+region = Rect2(960, 0, 480, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mn3c6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tm2sf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5uuj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7iml4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AlternateKillScene" type="Node2D"]
+script = ExtResource("1_k1akl")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 1072.0
+offset_bottom = 640.0
+color = Color(0.129412, 0, 0.0392157, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 272)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_mn3c6")
+autoplay = "default"
+frame_progress = 0.532284
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 424.0
+offset_top = 128.0
+offset_right = 568.0
+offset_bottom = 176.0
+scale = Vector2(2, 2)
+theme_override_fonts/normal_font = ExtResource("2_fumto")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[shake rate=20.0 level=15 connected=1][rainbow freq=0.3 sat=0.8 val=0.8]Killed :([/rainbow][/shake]"

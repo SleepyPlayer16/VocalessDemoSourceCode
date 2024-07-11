@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqt8moyvvtamc"]
+
+[ext_resource type="Texture2D" uid="uid://cbmbabfnuvj85" path="res://Sprites/HUD/spr_new_note.png" id="1_lypm2"]
+[ext_resource type="Script" path="res://Scripts/Systems/StrumBar/Note.gd" id="2_l5sji"]
+
+[sub_resource type="Animation" id="Animation_l4iln"]
+resource_name = "Hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_od85q"]
+resource_name = "Normal"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rejcj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xdld"]
+_data = {
+"Hit": SubResource("Animation_l4iln"),
+"Normal": SubResource("Animation_od85q"),
+"RESET": SubResource("Animation_rejcj")
+}
+
+[node name="Note" type="Sprite2D"]
+z_index = -99
+texture = ExtResource("1_lypm2")
+hframes = 8
+script = ExtResource("2_l5sji")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_2xdld")
+}

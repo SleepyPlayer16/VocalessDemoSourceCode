@@ -1,0 +1,155 @@
+[gd_scene load_steps=10 format=3 uid="uid://b0dm0xkpqe08e"]
+
+[ext_resource type="PackedScene" uid="uid://lu088fymsifn" path="res://Objects/PlayerObject.tscn" id="1_7li3k"]
+[ext_resource type="Script" path="res://Scripts/test_scene.gd" id="1_bx0fq"]
+[ext_resource type="PackedScene" uid="uid://4u0e2fk8e3g1" path="res://Objects/LevelObjects/ColorBlock1.tscn" id="2_oddwo"]
+[ext_resource type="PackedScene" uid="uid://cnesdt8epm8gq" path="res://Objects/LevelObjects/debugWallVine.tscn" id="3_13wlu"]
+[ext_resource type="TileSet" uid="uid://dgcaknh8l442x" path="res://Sprites/Tilesets/World_SolarCity/solarCity.tres" id="4_d5r38"]
+[ext_resource type="PackedScene" uid="uid://dl07vxsedi3mt" path="res://Objects/LevelObjects/BreakableBlock.tscn" id="5_k2m0k"]
+[ext_resource type="PackedScene" uid="uid://cao466qcjkkpg" path="res://Objects/LevelObjects/World4/BigIcePillar.tscn" id="7_a708p"]
+[ext_resource type="PackedScene" uid="uid://cy883shmjnjyx" path="res://Objects/LevelObjects/World4/Cannon.tscn" id="8_ijq3x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msu7b"]
+size = Vector2(40, 40)
+
+[node name="TUTORIAL" type="Node2D"]
+script = ExtResource("1_bx0fq")
+
+[node name="PlayerObject" parent="." instance=ExtResource("1_7li3k")]
+position = Vector2(1215, 113)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(330, 142)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+offset_left = -18.0
+offset_top = 74.0
+offset_right = 22.0
+offset_bottom = 114.0
+
+[node name="ColorRect2" type="ColorRect" parent="StaticBody2D"]
+offset_left = 22.0
+offset_top = 34.0
+offset_right = 62.0
+offset_bottom = 74.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(2, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(42, 54)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(456, 142)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+offset_left = -22.0
+offset_top = 74.0
+offset_right = 18.0
+offset_bottom = 114.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-2, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="."]
+position = Vector2(917, 204)
+rotation = 1.27772
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D6"]
+offset_left = -22.0
+offset_top = 74.0
+offset_right = 18.0
+offset_bottom = 114.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
+position = Vector2(-2, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(661, 72)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D4"]
+offset_left = -22.0
+offset_top = 74.0
+offset_right = 18.0
+offset_bottom = 114.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(-2, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="."]
+position = Vector2(768, 24)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D5"]
+offset_left = -22.0
+offset_top = 74.0
+offset_right = 18.0
+offset_bottom = 114.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5"]
+position = Vector2(-2, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(935, 142)
+scale = Vector2(19.2, 1)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
+offset_left = -22.0
+offset_top = 74.0
+offset_right = 107.0
+offset_bottom = 114.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-4.27083, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(35.625, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(75.2604, 94)
+shape = SubResource("RectangleShape2D_msu7b")
+
+[node name="ColorBlock1" parent="." instance=ExtResource("2_oddwo")]
+position = Vector2(928, -72)
+
+[node name="ColorBlock2" parent="." instance=ExtResource("2_oddwo")]
+position = Vector2(848, -32)
+blockType = 1
+
+[node name="ColorBlock3" parent="." instance=ExtResource("2_oddwo")]
+position = Vector2(768, 8)
+blockType = 2
+
+[node name="ColorBlock4" parent="." instance=ExtResource("2_oddwo")]
+position = Vector2(840, 56)
+blockType = 3
+
+[node name="debugWallVine" parent="." instance=ExtResource("3_13wlu")]
+position = Vector2(1112, 82)
+scale = Vector2(1, 6.48)
+
+[node name="debugWallVine2" parent="." instance=ExtResource("3_13wlu")]
+position = Vector2(1059, 79)
+scale = Vector2(1, 6.32)
+side = -1
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("4_d5r38")
+format = 2
+layer_0/tile_data = PackedInt32Array(131086, 65536, 0, 131087, 131072, 0, 131088, 131072, 0, 131089, 131072, 0, 131090, 196608, 0, 131091, 196608, 0, 131092, 196608, 0, 131093, 262144, 0, 65554, 1114112, 6, 19, 1114112, 6, -65516, 1114112, 6, -65515, 0, 1, -65514, 0, 1)
+
+[node name="Breakable" parent="." instance=ExtResource("5_k2m0k")]
+position = Vector2(947, 171)
+
+[node name="BigIcePillar" parent="." instance=ExtResource("7_a708p")]
+position = Vector2(2081, 56)
+
+[node name="Cannon" parent="." instance=ExtResource("8_ijq3x")]
+position = Vector2(1254, 191)

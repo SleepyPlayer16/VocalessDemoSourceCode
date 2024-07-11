@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterController" load_steps=2 format=3 uid="uid://ds01dihlaq36v"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterScripts/CharacterManager.gd" id="1_o3o3s"]
+
+[resource]
+script = ExtResource("1_o3o3s")
+maxWalkVelocity = 3.0
+jump_velocity = 295.0
+maxJumps = 3
+maxDashDistance = 7.0
+character_class = "Gunner"
+canWallJump = false
+portrait = "res://Characters/Applesauce/sprites/portrait.png"
+hudPortrait = "res://Characters/Applesauce/sprites/spr_hudPortrait.png"
+phantomColorPalette = "res://Characters/Karu/Palettes/pal_phantom.png"

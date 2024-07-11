@@ -1,0 +1,115 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3n5488aobjcn"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/ChartEditor/ChartEditor.gd" id="1_uq4dp"]
+[ext_resource type="Texture2D" uid="uid://bptd1tu7j36ao" path="res://Sprites/Editor/BackTiled.png" id="2_tqosw"]
+[ext_resource type="AudioStream" uid="uid://c20j3dhrtuch4" path="res://Music/funky180bpm.ogg" id="3_jdxd8"]
+[ext_resource type="AudioStream" uid="uid://dts2xorjtuun" path="res://Sounds/Metronome.wav" id="4_wu1td"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ujueu"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o0nk1"]
+size = Vector2(20, 552)
+
+[node name="ChartEditor" type="Node2D"]
+script = ExtResource("1_uq4dp")
+bpm = 125
+songToPlay = "res://Music/1.ogg"
+
+[node name="BackTiled" type="Sprite2D" parent="."]
+visible = false
+texture_repeat = 2
+position = Vector2(480, 270)
+texture = ExtResource("2_tqosw")
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 540)
+region_filter_clip_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_ujueu")
+offset_top = 256.0
+offset_right = 64.0
+offset_bottom = 320.0
+color = Color(0.4, 1, 1, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_jdxd8")
+
+[node name="noteSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_wu1td")
+
+[node name="Line" type="ColorRect" parent="."]
+visibility_layer = 2
+offset_left = 37.0
+offset_top = 1.0
+offset_right = 39.0
+offset_bottom = 542.0
+color = Color(1, 0.882353, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="Line"]
+position = Vector2(444, 270)
+
+[node name="LineCol" type="Area2D" parent="Line"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Line/LineCol"]
+position = Vector2(-10, 266)
+shape = SubResource("RectangleShape2D_o0nk1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -101
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+scroll_offset = Vector2(1, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+texture_repeat = 2
+motion_mirroring = Vector2(896, 1)
+
+[node name="tileBack" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+position = Vector2(0, 256)
+texture = ExtResource("2_tqosw")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 64)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -24.0
+offset_top = -96.0
+offset_right = 1024.0
+offset_bottom = 640.0
+color = Color(0.0980392, 0.117647, 0.258824, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 592.0
+offset_right = 1019.0
+offset_bottom = 64.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Speed Factor:"
+
+[node name="Snap" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 592.0
+offset_top = 48.0
+offset_right = 1019.0
+offset_bottom = 112.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Snap:"
+
+[node name="Zoom" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
+offset_left = 680.0
+offset_top = 96.0
+offset_right = 1107.0
+offset_bottom = 160.0
+theme_override_font_sizes/normal_font_size = 32
+text = "Zoom:"
+
+[node name="SongPosition" type="RichTextLabel" parent="CanvasLayer"]
+offset_left = 592.0
+offset_top = 96.0
+offset_right = 1019.0
+offset_bottom = 160.0
+theme_override_font_sizes/normal_font_size = 32
+text = "SongPosition:"
+
+[connection signal="area_entered" from="Line/LineCol" to="." method="_on_line_col_area_entered"]

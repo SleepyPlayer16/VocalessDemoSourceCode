@@ -1,0 +1,419 @@
+[gd_scene load_steps=24 format=3 uid="uid://xscamflxs0ci"]
+
+[ext_resource type="Texture2D" uid="uid://c10mg1mtgfwqk" path="res://Sprites/HUD/rankingBackground.png" id="1_wvl0t"]
+[ext_resource type="Script" path="res://Scripts/Systems/levelResults.gd" id="1_y0weh"]
+[ext_resource type="Texture2D" uid="uid://bi42h52oga78o" path="res://Sprites/HUD/rankingWhiteAnimSprite.png" id="2_0ul2o"]
+[ext_resource type="Texture2D" uid="uid://cwvqfs1112ume" path="res://Sprites/HUD/rankingBack_S+.png" id="3_rjcp7"]
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="4_j1pkm"]
+[ext_resource type="AudioStream" uid="uid://cashd6eabox8s" path="res://Music/mus_ResultsScreenRanking.ogg" id="5_xomtm"]
+[ext_resource type="Texture2D" uid="uid://bx0u2x1ioi2il" path="res://Sprites/HUD/rankingBack_S.png" id="6_22quj"]
+[ext_resource type="Texture2D" uid="uid://j245bqiu43vb" path="res://Characters/Karu/Sprites/portrait.png" id="6_26m2h"]
+[ext_resource type="Texture2D" uid="uid://dju37liao6ylk" path="res://Sprites/HUD/rankingBack_A.png" id="7_ug4s2"]
+[ext_resource type="Texture2D" uid="uid://c8fehi8pvdgi5" path="res://Sprites/HUD/rankingBack_B.png" id="8_j61r6"]
+[ext_resource type="Texture2D" uid="uid://bp72kswego6tr" path="res://Sprites/HUD/rankingBack_C.png" id="9_iestu"]
+[ext_resource type="Texture2D" uid="uid://drvg8iyw465cr" path="res://Sprites/HUD/rankingBack_D.png" id="10_b8nop"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="12_or07m"]
+[ext_resource type="Texture2D" uid="uid://6lunmit6gkr5" path="res://Sprites/Menu/spr_tooNewRecord.png" id="14_fuos0"]
+[ext_resource type="AudioStream" uid="uid://b41r3cx236d8f" path="res://Sounds/spr_tooSound.wav" id="15_womd6"]
+[ext_resource type="AudioStream" uid="uid://dpacqm0hv3jat" path="res://Sounds/sfx_applause.ogg" id="16_lo0jq"]
+
+[sub_resource type="Animation" id="Animation_1jn2q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 540)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RankingWhiteAnimSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(960, 270)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RankingWhiteAnimSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RankStuff:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("results:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Character:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(504, 518)]
+}
+
+[sub_resource type="Animation" id="Animation_5j447"]
+resource_name = "rankingIntroAnim"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Background:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(0.120742, 1),
+"update": 0,
+"values": [Vector2(0, 540), Vector2(0, 270)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RankingWhiteAnimSprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.5),
+"transitions": PackedFloat32Array(2.46228, 0.420448, 0.116629),
+"update": 0,
+"values": [Vector2(960, 270), Vector2(480, 270), Vector2(-500, 270)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RankingWhiteAnimSprite:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect:color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.4, 0.8),
+"transitions": PackedFloat32Array(1, 1e-05, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RankStuff:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("results:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Character:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(0.225313, 1),
+"update": 0,
+"values": [Vector2(504, 518), Vector2(504, 240)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0scqv"]
+_data = {
+"RESET": SubResource("Animation_1jn2q"),
+"rankingIntroAnim": SubResource("Animation_5j447")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmsjj"]
+shader = ExtResource("12_or07m")
+
+[sub_resource type="Animation" id="Animation_l4vih"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SprTooNewRecord:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-256, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Too:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Applause:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nneom"]
+resource_name = "newRecord"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SprTooNewRecord:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.9),
+"transitions": PackedFloat32Array(0.112656, 1),
+"update": 0,
+"values": [Vector2(-256, 80), Vector2(0, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Too:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Applause:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wig1u"]
+_data = {
+"RESET": SubResource("Animation_l4vih"),
+"newRecord": SubResource("Animation_nneom")
+}
+
+[node name="levelResults" type="CanvasLayer"]
+script = ExtResource("1_y0weh")
+
+[node name="results" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_xomtm")
+autoplay = true
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0scqv")
+}
+autoplay = "rankingIntroAnim"
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(0, 540)
+scale = Vector2(2, 2)
+texture = ExtResource("1_wvl0t")
+centered = false
+
+[node name="RankingWhiteAnimSprite" type="Sprite2D" parent="."]
+position = Vector2(960, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("2_0ul2o")
+centered = false
+
+[node name="RankStuff" type="Node2D" parent="."]
+visible = false
+
+[node name="rankingBack_S+" type="Sprite2D" parent="RankStuff"]
+visible = false
+position = Vector2(0, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("3_rjcp7")
+centered = false
+
+[node name="rankingBack_S" type="Sprite2D" parent="RankStuff"]
+visible = false
+position = Vector2(0, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("6_22quj")
+centered = false
+
+[node name="rankingBack_A" type="Sprite2D" parent="RankStuff"]
+visible = false
+position = Vector2(0, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ug4s2")
+centered = false
+
+[node name="rankingBack_B" type="Sprite2D" parent="RankStuff"]
+visible = false
+position = Vector2(0, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("8_j61r6")
+centered = false
+
+[node name="rankingBack_C" type="Sprite2D" parent="RankStuff"]
+visible = false
+position = Vector2(0, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("9_iestu")
+centered = false
+
+[node name="rankingBack_D" type="Sprite2D" parent="RankStuff"]
+visible = false
+position = Vector2(0, 270)
+scale = Vector2(2, 2)
+texture = ExtResource("10_b8nop")
+centered = false
+
+[node name="Deaths" type="RichTextLabel" parent="RankStuff"]
+offset_left = 488.0
+offset_top = 302.0
+offset_right = 624.0
+offset_bottom = 336.0
+theme_override_fonts/normal_font = ExtResource("4_j1pkm")
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+
+[node name="Parries" type="RichTextLabel" parent="RankStuff"]
+offset_left = 464.0
+offset_top = 390.0
+offset_right = 600.0
+offset_bottom = 424.0
+theme_override_fonts/normal_font = ExtResource("4_j1pkm")
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+
+[node name="Time" type="RichTextLabel" parent="RankStuff"]
+offset_left = 424.0
+offset_top = 484.0
+offset_right = 568.0
+offset_bottom = 518.0
+theme_override_fonts/normal_font = ExtResource("4_j1pkm")
+theme_override_font_sizes/normal_font_size = 32
+text = "0"
+
+[node name="Character" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_jmsjj")
+position = Vector2(504, 518)
+scale = Vector2(2, 2)
+texture = ExtResource("6_26m2h")
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_top = 270.0
+offset_right = 960.0
+offset_bottom = 540.0
+metadata/_edit_lock_ = true
+
+[node name="SprTooNewRecord" type="Sprite2D" parent="."]
+position = Vector2(-256, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("14_fuos0")
+centered = false
+hframes = 3
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_wig1u")
+}
+
+[node name="Too" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_womd6")
+bus = &"SoundEffects"
+
+[node name="Applause" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_lo0jq")
+volume_db = -6.0
+bus = &"SoundEffects"

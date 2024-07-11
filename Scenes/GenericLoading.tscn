@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://bnmgcnhbwu3ik"]
+
+[ext_resource type="Texture2D" uid="uid://bolbp5i67rayp" path="res://Sprites/Menu/spr_karuLoading.png" id="1_mxdte"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqvft"]
+atlas = ExtResource("1_mxdte")
+region = Rect2(0, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1afjp"]
+atlas = ExtResource("1_mxdte")
+region = Rect2(32, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpwfa"]
+atlas = ExtResource("1_mxdte")
+region = Rect2(64, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghnt2"]
+atlas = ExtResource("1_mxdte")
+region = Rect2(96, 0, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vqewr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqvft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1afjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpwfa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghnt2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="GenericLoader" type="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 960.0
+offset_bottom = 544.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ColorRect"]
+position = Vector2(864, 432)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_vqewr")
+autoplay = "default"
+frame_progress = 0.42456
+centered = false

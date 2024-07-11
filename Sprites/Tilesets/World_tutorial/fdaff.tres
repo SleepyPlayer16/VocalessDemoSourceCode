@@ -1,0 +1,22 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://dhq2lx2am5b63"]
+
+[ext_resource type="Texture2D" uid="uid://cpyau58lwm6ir" path="res://Sprites/Tilesets/World_SolarCity/spr_world1_tileset.png" id="1_q30ch"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0pew"]
+texture = ExtResource("1_q30ch")
+8:0/0 = 0
+8:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:0/0/physics_layer_0/angular_velocity = 0.0
+9:0/0 = 0
+9:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:0/0/physics_layer_0/angular_velocity = 0.0
+9:1/0 = 0
+9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:1/0/physics_layer_0/angular_velocity = 0.0
+8:1/0 = 0
+8:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:1/0/physics_layer_0/angular_velocity = 0.0
+
+[resource]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_y0pew")

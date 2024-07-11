@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://3g6bfeaxh6t2"]
+
+[ext_resource type="SpriteFrames" uid="uid://dxnyd8ed6dpsw" path="res://Characters/Applesauce/sprites/spriteFrames.tres" id="1_4dfbm"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_acqca"]
+[ext_resource type="Texture2D" uid="uid://b0vplic7vtv6m" path="res://Characters/Applesauce/Palettes/pal_0.png" id="2_7uxiu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xmbex"]
+shader = ExtResource("1_acqca")
+shader_parameter/palette = ExtResource("2_7uxiu")
+
+[node name="Applesauce" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_xmbex")
+position = Vector2(3, 0)
+sprite_frames = ExtResource("1_4dfbm")
+animation = &"Stomp"
+frame_progress = 0.400617

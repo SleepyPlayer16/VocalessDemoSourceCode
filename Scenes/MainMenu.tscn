@@ -1,0 +1,1107 @@
+[gd_scene load_steps=65 format=3 uid="uid://d2ylegvx4wmbx"]
+
+[ext_resource type="Texture2D" uid="uid://d0xpxutegggs0" path="res://Sprites/Menu/spr_tileBack.png" id="1_e87ih"]
+[ext_resource type="Texture2D" uid="uid://xv5d68wgh0lt" path="res://Sprites/Menu/spr_karuJumpscare.png" id="1_nkkns"]
+[ext_resource type="Script" path="res://Scripts/Systems/MainMenu.gd" id="1_shr55"]
+[ext_resource type="Texture2D" uid="uid://b02tyq74xadr2" path="res://Sprites/Menu/spr_menu_logo.png" id="2_5glgq"]
+[ext_resource type="Texture2D" uid="uid://cbpef64cfpup3" path="res://Sprites/Menu/spr_ksDemo.png" id="4_1algd"]
+[ext_resource type="Texture2D" uid="uid://b8anf08t2pi01" path="res://Sprites/Menu/spr_notesIcon.png" id="4_5vylg"]
+[ext_resource type="Texture2D" uid="uid://dl520jyy5nek5" path="res://Sprites/Menu/spr_mainMenuOptions.png" id="5_x07fn"]
+[ext_resource type="Texture2D" uid="uid://c5puht6wccsf1" path="res://Sprites/Menu/spr_menuSelectBtnHelper.png" id="7_ksh78"]
+[ext_resource type="Texture2D" uid="uid://shd5whhk3t5j" path="res://Sprites/Menu/OptionsMenuBack.png" id="7_t5u1b"]
+[ext_resource type="Texture2D" uid="uid://cnh84whduuel4" path="res://Sprites/Menu/spr_volumeSlider.png" id="7_vxach"]
+[ext_resource type="Texture2D" uid="uid://cdtae5eysri82" path="res://Sprites/Menu/spr_volumeSliderThingie.png" id="8_6sop3"]
+[ext_resource type="Script" path="res://Scripts/Systems/InputRemapping.gd" id="8_pb0td"]
+[ext_resource type="Texture2D" uid="uid://dp4la7ctnkdny" path="res://Sprites/Menu/InputMenu/spr_action.png" id="8_urc8b"]
+[ext_resource type="Texture2D" uid="uid://gio3jn0takdl" path="res://Sprites/Menu/InputMenu/spr_dashKey.png" id="9_8u2v2"]
+[ext_resource type="FontFile" uid="uid://dnncxrvsc2lcy" path="res://Fonts/Retron2000.ttf" id="9_gq2rn"]
+[ext_resource type="Texture2D" uid="uid://dpiwt2cd20tqj" path="res://Sprites/Menu/InputMenu/spr_key.png" id="9_htg4g"]
+[ext_resource type="Texture2D" uid="uid://qaivnua4nnhm" path="res://Sprites/Menu/spr_sfxVolOption.png" id="9_q88pi"]
+[ext_resource type="Texture2D" uid="uid://d3bsnsjkx3sf0" path="res://Sprites/Menu/InputMenu/spr_jumpKey.png" id="10_2sblu"]
+[ext_resource type="Texture2D" uid="uid://df0ls66moqpt1" path="res://Sprites/Menu/InputMenu/spr_upDog.png" id="10_7yqfa"]
+[ext_resource type="Texture2D" uid="uid://u1rcdhh0h3tt" path="res://Sprites/Menu/spr_musicVolOption.png" id="10_uhcq6"]
+[ext_resource type="Texture2D" uid="uid://x7oijrew15ch" path="res://Sprites/Menu/InputMenu/spr_downKey.png" id="11_2nfyo"]
+[ext_resource type="Texture2D" uid="uid://datg5bfr4ou3u" path="res://Sprites/Menu/spr_fullscreenOption.png" id="11_bbjaw"]
+[ext_resource type="Texture2D" uid="uid://ca0o5byeibg55" path="res://Sprites/Menu/InputMenu/spr_stompKey.png" id="11_eunls"]
+[ext_resource type="Texture2D" uid="uid://cw8r8gg23pl6b" path="res://Sprites/Menu/InputMenu/spr_specialKey.png" id="12_4r4xl"]
+[ext_resource type="Texture2D" uid="uid://6agv8qkh00ao" path="res://Sprites/Menu/spr_controlsOptions.png" id="12_nn7t7"]
+[ext_resource type="Texture2D" uid="uid://ch01xacbul7sr" path="res://Sprites/Menu/spr_vsyncOption.png" id="13_gfaqn"]
+[ext_resource type="Texture2D" uid="uid://c8guk3g47itwf" path="res://Sprites/Menu/InputMenu/spr_moveLeft.png" id="13_vq4gl"]
+[ext_resource type="Texture2D" uid="uid://bpufcxyiu2xyh" path="res://Sprites/Menu/spr_cameraSmoothingOption.png" id="14_524jf"]
+[ext_resource type="Texture2D" uid="uid://bkouujygey2ih" path="res://Sprites/Menu/InputMenu/spr_moveRight.png" id="14_hvvdp"]
+[ext_resource type="Texture2D" uid="uid://dmw5ydnglmj2g" path="res://Sprites/Menu/PauseMenuSelector.png" id="15_a6amk"]
+[ext_resource type="Texture2D" uid="uid://6ggxsnwubh4h" path="res://Sprites/Menu/InputMenu/spr_parryKey.png" id="18_5nw6f"]
+[ext_resource type="Texture2D" uid="uid://gubehm2omfej" path="res://Sprites/Menu/InputMenu/spr_pressKey.png" id="19_rm1kt"]
+[ext_resource type="Texture2D" uid="uid://b5brf0b2u2y4d" path="res://Sprites/Menu/InputMenu/scrollArrow.png" id="21_hwud4"]
+[ext_resource type="Texture2D" uid="uid://bmflt0io5ebri" path="res://Sprites/Menu/InputMenu/spr_button.png" id="21_o5q63"]
+[ext_resource type="Texture2D" uid="uid://cqdc7aby56pwj" path="res://Sprites/Menu/InputMenu/spr_buttonsPad.png" id="23_jb746"]
+[ext_resource type="Texture2D" uid="uid://d3uq1bovkokyp" path="res://Sprites/Menu/InputMenu/spr_pressButton.png" id="23_mg1by"]
+[ext_resource type="Texture2D" uid="uid://cn3qjlulon7yx" path="res://Sprites/Menu/InputMenu/btn_iconsStrip19-sheet.png" id="24_colfi"]
+[ext_resource type="Texture2D" uid="uid://csy36uopyntl1" path="res://Sprites/Menu/spr_windowSize.png" id="36_5g4pp"]
+[ext_resource type="Texture2D" uid="uid://db4bhrtjn0idm" path="res://Sprites/Menu/spr_speedrunTimer.png" id="39_hsq3l"]
+[ext_resource type="Texture2D" uid="uid://bn3pn1pnf2lh5" path="res://Sprites/Menu/spr_fpsOption.png" id="40_tyk2o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53fl5"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(0, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm0bf"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(160, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6sj3f"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(320, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13xxa"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(480, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iupw"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(640, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy67p"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(800, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6k1k"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(960, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4xulp"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(1120, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tychy"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(1280, 0, 160, 233)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hovj5"]
+atlas = ExtResource("1_nkkns")
+region = Rect2(1440, 0, 160, 233)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5liw0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53fl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm0bf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53fl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53fl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53fl5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6sj3f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13xxa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iupw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy67p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6k1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4xulp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tychy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hovj5")
+}],
+"loop": false,
+"name": &"Boo",
+"speed": 12.0
+}]
+
+[sub_resource type="Animation" id="Animation_3g6yt"]
+resource_name = "EnterScene"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ccy43"]
+resource_name = "ExitScene"
+length = 0.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_w46h0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3rrkf"]
+_data = {
+"EnterScene": SubResource("Animation_3g6yt"),
+"ExitScene": SubResource("Animation_ccy43"),
+"RESET": SubResource("Animation_w46h0")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rutl7"]
+atlas = ExtResource("21_hwud4")
+region = Rect2(0, 0, 26, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkuf1"]
+atlas = ExtResource("21_hwud4")
+region = Rect2(26, 0, 26, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wd6wq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rutl7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkuf1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_13aal"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bqxcq"]
+
+[sub_resource type="Animation" id="Animation_iab1s"]
+resource_name = "MenuIn"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.164939, 1),
+"update": 0,
+"values": [Vector2(-900, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.152941, 0, 0.0862745, 0), Color(0.152941, 0, 0.0862745, 0.627451)]
+}
+
+[sub_resource type="Animation" id="Animation_iqtr2"]
+resource_name = "MenuOut"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(0.15932, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-900, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.152941, 0, 0.0862745, 0.627451), Color(0.152941, 0, 0.0862745, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_73gin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-900, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.152941, 0, 0.0862745, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pk6u0"]
+_data = {
+"MenuIn": SubResource("Animation_iab1s"),
+"MenuOut": SubResource("Animation_iqtr2"),
+"RESET": SubResource("Animation_73gin")
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_shr55")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_offset = Vector2(1, 1)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_repeat = 2
+motion_mirroring = Vector2(1920, 64)
+
+[node name="tileBack" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_repeat = 2
+scale = Vector2(2, 2)
+texture = ExtResource("1_e87ih")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 960, 540)
+
+[node name="Main" type="Node2D" parent="."]
+
+[node name="Logo" type="Sprite2D" parent="Main"]
+position = Vector2(480, 91)
+scale = Vector2(2, 2)
+texture = ExtResource("2_5glgq")
+
+[node name="SprKsDemo" type="Sprite2D" parent="Main/Logo"]
+position = Vector2(-172, 22.5)
+texture = ExtResource("4_1algd")
+centered = false
+
+[node name="KaruJumpscare" type="AnimatedSprite2D" parent="Main"]
+position = Vector2(-64, 72)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5liw0")
+animation = &"Boo"
+autoplay = "Boo"
+frame = 12
+frame_progress = 1.0
+centered = false
+offset = Vector2(0, 1)
+
+[node name="SprNotesIcon" type="Sprite2D" parent="Main"]
+visible = false
+position = Vector2(896, 476)
+scale = Vector2(2, 2)
+texture = ExtResource("4_5vylg")
+metadata/_edit_lock_ = true
+
+[node name="SprMainMenuOptions" type="Sprite2D" parent="Main"]
+position = Vector2(264, 224)
+scale = Vector2(2, 2)
+texture = ExtResource("5_x07fn")
+centered = false
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_3rrkf")
+}
+
+[node name="SprMenuSelectBtnHelper" type="Sprite2D" parent="Main"]
+position = Vector2(706, 472)
+scale = Vector2(2, 2)
+texture = ExtResource("7_ksh78")
+centered = false
+hframes = 2
+
+[node name="ColorRect" type="ColorRect" parent="Main"]
+modulate = Color(0, 0, 0, 1)
+offset_right = 960.0
+offset_bottom = 540.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="OptionsMenu" type="Node2D" parent="."]
+position = Vector2(-900, 0)
+
+[node name="ColorRect" type="ColorRect" parent="OptionsMenu"]
+offset_left = -856.0
+offset_right = 1876.0
+offset_bottom = 576.0
+mouse_filter = 2
+color = Color(0.152941, 0, 0.0862745, 0)
+
+[node name="OptionsMenuBack" type="Sprite2D" parent="OptionsMenu"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_t5u1b")
+centered = false
+
+[node name="OptionsMenuBack2" type="Sprite2D" parent="OptionsMenu/OptionsMenuBack"]
+position = Vector2(0, 256)
+texture = ExtResource("7_t5u1b")
+centered = false
+
+[node name="OptionsMenuBack3" type="Sprite2D" parent="OptionsMenu/OptionsMenuBack"]
+position = Vector2(0, 512)
+texture = ExtResource("7_t5u1b")
+centered = false
+
+[node name="InputRemapping_Menu" type="Node2D" parent="OptionsMenu"]
+visible = false
+scale = Vector2(2, 2)
+script = ExtResource("8_pb0td")
+bindingType = "keybodo"
+
+[node name="InputRemapping_Pad" type="Node2D" parent="OptionsMenu/InputRemapping_Menu"]
+
+[node name="SectionG2" type="Node2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad"]
+position = Vector2(0, 232)
+
+[node name="UpStick" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG2"]
+position = Vector2(8, 32)
+texture = ExtResource("10_7yqfa")
+centered = false
+
+[node name="DownStick" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG2"]
+position = Vector2(8, 62)
+texture = ExtResource("11_2nfyo")
+centered = false
+
+[node name="arrowPointer2" type="AnimatedSprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG2"]
+position = Vector2(408, 288)
+scale = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_wd6wq")
+autoplay = "default"
+
+[node name="UpMoveStick" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG2"]
+position = Vector2(274, 52)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+frame = 22
+
+[node name="DownMoveStick" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG2"]
+position = Vector2(274, 84)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+frame = 23
+
+[node name="SectionG1" type="Node2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad"]
+
+[node name="DashBtn" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(274, 53.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("24_colfi")
+hframes = 6
+vframes = 6
+frame = 1
+
+[node name="JumpBtn" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(274, 88)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+
+[node name="StompBtn" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(274, 120)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+frame = 2
+
+[node name="SpecialBtn" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(274, 152)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+frame = 3
+
+[node name="ParryBtn" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(274, 184)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+frame = 29
+
+[node name="RightStick" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(274, 216)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+frame = 21
+
+[node name="LeftStick" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(274, 248)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("23_jb746")
+hframes = 6
+vframes = 6
+frame = 20
+
+[node name="SprAction2" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(8, 32)
+texture = ExtResource("9_8u2v2")
+centered = false
+
+[node name="SprAction3" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(8, 62)
+texture = ExtResource("10_2sblu")
+centered = false
+
+[node name="SprAction4" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(8, 97)
+texture = ExtResource("11_eunls")
+centered = false
+
+[node name="SprAction5" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(8, 131)
+texture = ExtResource("12_4r4xl")
+centered = false
+
+[node name="SprAction6" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(32, 231)
+texture = ExtResource("13_vq4gl")
+centered = false
+
+[node name="SprAction7" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(32, 197)
+texture = ExtResource("14_hvvdp")
+centered = false
+
+[node name="SprAction8" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(8, 167)
+texture = ExtResource("18_5nw6f")
+centered = false
+
+[node name="SprKey" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(278, 24)
+texture = ExtResource("21_o5q63")
+
+[node name="SprAction" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(-1.5, 1)
+texture = ExtResource("8_urc8b")
+centered = false
+
+[node name="arrowPointer" type="AnimatedSprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/SectionG1"]
+position = Vector2(408, 256)
+sprite_frames = SubResource("SpriteFrames_wd6wq")
+autoplay = "default"
+
+[node name="pressAKeyBack" type="ColorRect" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad"]
+visible = false
+offset_right = 493.0
+offset_bottom = 277.0
+color = Color(0.168627, 0, 0.141176, 0.686275)
+
+[node name="SprPressKey" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/InputRemapping_Pad/pressAKeyBack"]
+position = Vector2(210, 136)
+texture = ExtResource("23_mg1by")
+
+[node name="Section2" type="Node2D" parent="OptionsMenu/InputRemapping_Menu"]
+visible = false
+position = Vector2(0, 232)
+
+[node name="UpKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section2"]
+clip_contents = false
+offset_left = 265.0
+offset_top = 36.0
+offset_right = 431.0
+offset_bottom = 76.0
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "A"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="DownKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section2"]
+clip_contents = false
+offset_left = 265.0
+offset_top = 68.0
+offset_right = 432.0
+offset_bottom = 108.0
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "B"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="SprUpKey" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section2"]
+position = Vector2(8, 32)
+texture = ExtResource("10_7yqfa")
+centered = false
+
+[node name="SprDownKey" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section2"]
+position = Vector2(8, 62)
+texture = ExtResource("11_2nfyo")
+centered = false
+
+[node name="arrowPointer2" type="AnimatedSprite2D" parent="OptionsMenu/InputRemapping_Menu/Section2"]
+position = Vector2(408, 288)
+scale = Vector2(-1, -1)
+sprite_frames = SubResource("SpriteFrames_wd6wq")
+autoplay = "default"
+
+[node name="Section1" type="Node2D" parent="OptionsMenu/InputRemapping_Menu"]
+visible = false
+
+[node name="DashKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+clip_contents = false
+offset_left = 265.0
+offset_top = 36.0
+offset_right = 430.0
+offset_bottom = 72.0
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "A"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="JumpKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+clip_contents = false
+offset_left = 265.0
+offset_top = 68.0
+offset_right = 432.0
+offset_bottom = 108.0
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "B"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="StompKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+clip_contents = false
+offset_left = 265.0
+offset_top = 99.5
+offset_right = 432.0
+offset_bottom = 139.5
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "C"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="SpecialKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+clip_contents = false
+offset_left = 265.0
+offset_top = 131.5
+offset_right = 432.0
+offset_bottom = 171.5
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "D"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="ParryKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+clip_contents = false
+offset_left = 263.5
+offset_top = 164.0
+offset_right = 430.5
+offset_bottom = 204.0
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "E"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="MoveRightKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+clip_contents = false
+offset_left = 263.5
+offset_top = 196.0
+offset_right = 430.5
+offset_bottom = 236.0
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "F"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="MoveLeftKey" type="RichTextLabel" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+clip_contents = false
+offset_left = 263.5
+offset_top = 227.5
+offset_right = 430.5
+offset_bottom = 267.5
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "G"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+visible_characters = 9
+visible_ratio = 9.0
+
+[node name="SprAction2" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(8, 32)
+texture = ExtResource("9_8u2v2")
+centered = false
+
+[node name="SprAction3" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(8, 62)
+texture = ExtResource("10_2sblu")
+centered = false
+
+[node name="SprAction4" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(8, 97)
+texture = ExtResource("11_eunls")
+centered = false
+
+[node name="SprAction5" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(8, 131)
+texture = ExtResource("12_4r4xl")
+centered = false
+
+[node name="SprAction6" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(32, 231)
+texture = ExtResource("13_vq4gl")
+centered = false
+
+[node name="SprAction7" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(32, 197)
+texture = ExtResource("14_hvvdp")
+centered = false
+
+[node name="SprAction8" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(8, 167)
+texture = ExtResource("18_5nw6f")
+centered = false
+
+[node name="SprKey" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(292, 24)
+texture = ExtResource("9_htg4g")
+
+[node name="SprAction" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(-1.5, 1)
+texture = ExtResource("8_urc8b")
+centered = false
+
+[node name="arrowPointer" type="AnimatedSprite2D" parent="OptionsMenu/InputRemapping_Menu/Section1"]
+position = Vector2(408, 256)
+sprite_frames = SubResource("SpriteFrames_wd6wq")
+autoplay = "default"
+
+[node name="pressAKeyBack" type="ColorRect" parent="OptionsMenu/InputRemapping_Menu"]
+visible = false
+offset_right = 493.0
+offset_bottom = 277.0
+color = Color(0.168627, 0, 0.141176, 0.686275)
+
+[node name="SprPressKey" type="Sprite2D" parent="OptionsMenu/InputRemapping_Menu/pressAKeyBack"]
+position = Vector2(210, 136)
+texture = ExtResource("19_rm1kt")
+
+[node name="Selector" type="Sprite2D" parent="OptionsMenu"]
+position = Vector2(96, 38)
+rotation = 3.14159
+scale = Vector2(2, -2)
+texture = ExtResource("15_a6amk")
+centered = false
+hframes = 2
+
+[node name="Normal_options" type="Node2D" parent="OptionsMenu"]
+
+[node name="SprVolumeSlider" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(480, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("7_vxach")
+centered = false
+
+[node name="SprVolumeSlider2" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(480, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("7_vxach")
+centered = false
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/Normal_options"]
+offset_left = 496.0
+offset_top = 38.0
+offset_right = 660.0
+offset_bottom = 62.0
+scale = Vector2(2, 2)
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("8_6sop3")
+theme_override_icons/grabber_highlight = ExtResource("8_6sop3")
+theme_override_icons/grabber_disabled = ExtResource("8_6sop3")
+theme_override_icons/tick = ExtResource("8_6sop3")
+theme_override_styles/slider = SubResource("StyleBoxTexture_13aal")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_bqxcq")
+min_value = -45.0
+max_value = 0.0
+step = 0.25
+editable = false
+scrollable = false
+
+[node name="HSlider2" type="HSlider" parent="OptionsMenu/Normal_options"]
+offset_left = 496.0
+offset_top = 102.0
+offset_right = 660.0
+offset_bottom = 126.0
+scale = Vector2(2, 2)
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("8_6sop3")
+theme_override_icons/grabber_highlight = ExtResource("8_6sop3")
+theme_override_icons/grabber_disabled = ExtResource("8_6sop3")
+theme_override_icons/tick = ExtResource("8_6sop3")
+theme_override_styles/slider = SubResource("StyleBoxTexture_13aal")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_bqxcq")
+min_value = -45.0
+max_value = 0.0
+step = 0.25
+editable = false
+scrollable = false
+
+[node name="SprSfxVolOption" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(56, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("9_q88pi")
+centered = false
+
+[node name="SprMusicVolOption" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(88, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("10_uhcq6")
+centered = false
+
+[node name="SprFullscreenOption" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(72, 208)
+scale = Vector2(2, 2)
+texture = ExtResource("11_bbjaw")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="SprControlsOptions" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(16, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("12_nn7t7")
+centered = false
+
+[node name="SprVsyncOption" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(16, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("13_gfaqn")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="SprCameraSmoothingOption" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(80, 344)
+scale = Vector2(2, 2)
+texture = ExtResource("14_524jf")
+centered = false
+hframes = 2
+
+[node name="SprSpeedrunTimer" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+visible = false
+position = Vector2(68, 600)
+scale = Vector2(2, 2)
+texture = ExtResource("39_hsq3l")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="SprWindowSize" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(92, 480)
+scale = Vector2(2, 2)
+texture = ExtResource("36_5g4pp")
+centered = false
+hframes = 4
+
+[node name="SprFps" type="Sprite2D" parent="OptionsMenu/Normal_options"]
+position = Vector2(-48, 608)
+scale = Vector2(2, 2)
+texture = ExtResource("40_tyk2o")
+centered = false
+
+[node name="Fps" type="RichTextLabel" parent="OptionsMenu/Normal_options"]
+clip_contents = false
+offset_left = 244.0
+offset_top = 608.0
+offset_right = 409.0
+offset_bottom = 644.0
+scale = Vector2(2, 2)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "120
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="WebOptions" type="Node2D" parent="OptionsMenu"]
+
+[node name="SprVolumeSlider" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(480, 40)
+scale = Vector2(2, 2)
+texture = ExtResource("7_vxach")
+centered = false
+
+[node name="SprVolumeSlider2" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(480, 104)
+scale = Vector2(2, 2)
+texture = ExtResource("7_vxach")
+centered = false
+
+[node name="HSlider" type="HSlider" parent="OptionsMenu/WebOptions"]
+offset_left = 496.0
+offset_top = 38.0
+offset_right = 660.0
+offset_bottom = 62.0
+scale = Vector2(2, 2)
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("8_6sop3")
+theme_override_icons/grabber_highlight = ExtResource("8_6sop3")
+theme_override_icons/grabber_disabled = ExtResource("8_6sop3")
+theme_override_icons/tick = ExtResource("8_6sop3")
+theme_override_styles/slider = SubResource("StyleBoxTexture_13aal")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_bqxcq")
+min_value = -45.0
+max_value = 0.0
+step = 0.25
+editable = false
+scrollable = false
+
+[node name="HSlider2" type="HSlider" parent="OptionsMenu/WebOptions"]
+offset_left = 496.0
+offset_top = 102.0
+offset_right = 660.0
+offset_bottom = 126.0
+scale = Vector2(2, 2)
+focus_mode = 0
+theme_override_icons/grabber = ExtResource("8_6sop3")
+theme_override_icons/grabber_highlight = ExtResource("8_6sop3")
+theme_override_icons/grabber_disabled = ExtResource("8_6sop3")
+theme_override_icons/tick = ExtResource("8_6sop3")
+theme_override_styles/slider = SubResource("StyleBoxTexture_13aal")
+theme_override_styles/grabber_area = SubResource("StyleBoxEmpty_bqxcq")
+min_value = -45.0
+max_value = 0.0
+step = 0.25
+editable = false
+scrollable = false
+
+[node name="SprSfxVolOption" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(56, 80)
+scale = Vector2(2, 2)
+texture = ExtResource("9_q88pi")
+centered = false
+
+[node name="SprMusicVolOption" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(88, 16)
+scale = Vector2(2, 2)
+texture = ExtResource("10_uhcq6")
+centered = false
+
+[node name="SprFullscreenOption" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(72, 208)
+scale = Vector2(2, 2)
+texture = ExtResource("11_bbjaw")
+centered = false
+hframes = 2
+frame = 1
+
+[node name="SprControlsOptions" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(16, 144)
+scale = Vector2(2, 2)
+texture = ExtResource("12_nn7t7")
+centered = false
+
+[node name="SprCameraSmoothingOption" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(80, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("14_524jf")
+centered = false
+hframes = 2
+
+[node name="SprFps" type="Sprite2D" parent="OptionsMenu/WebOptions"]
+position = Vector2(-48, 416)
+scale = Vector2(2, 2)
+texture = ExtResource("40_tyk2o")
+centered = false
+
+[node name="Fps" type="RichTextLabel" parent="OptionsMenu/WebOptions"]
+clip_contents = false
+offset_left = 244.0
+offset_top = 416.0
+offset_right = 409.0
+offset_bottom = 452.0
+scale = Vector2(2, 2)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("9_gq2rn")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+text = "120
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="AnimationPlayerTwo" type="AnimationPlayer" parent="OptionsMenu"]
+libraries = {
+"": SubResource("AnimationLibrary_pk6u0")
+}
+speed_scale = 1.5
+
+[node name="fpsTimer" type="Timer" parent="."]
+wait_time = 0.08
+one_shot = true
+
+[node name="volumeTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+
+[connection signal="animation_finished" from="Main/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="value_changed" from="OptionsMenu/Normal_options/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/Normal_options/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/WebOptions/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="OptionsMenu/WebOptions/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="animation_finished" from="OptionsMenu/AnimationPlayerTwo" to="." method="_on_animation_player_two_animation_finished"]

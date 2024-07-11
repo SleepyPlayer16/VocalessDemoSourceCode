@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://sacufomskuxr"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Player/DashLine.gd" id="1_uom0x"]
+
+[node name="DashLine" type="Line2D"]
+default_color = Color(1, 0.815686, 0.192157, 1)
+script = ExtResource("1_uom0x")

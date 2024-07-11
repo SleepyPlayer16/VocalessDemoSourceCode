@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccccyu63u8yxv"]
+
+[ext_resource type="Texture2D" uid="uid://dv8riaguw3yuw" path="res://Sprites/StageObjects/spr_checkpoint.png" id="1_bc5x7"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/checkPoint.gd" id="1_q4v6b"]
+[ext_resource type="AudioStream" uid="uid://c06ygn4spm3ys" path="res://Sounds/checkpoint.wav" id="2_1am6e"]
+[ext_resource type="Texture2D" uid="uid://cxdji6m2ula35" path="res://Sprites/FX/spr_tiney_particle.png" id="4_0v3np"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bwmd5"]
+size = Vector2(38, 53)
+
+[sub_resource type="Curve" id="Curve_xywui"]
+max_value = 0.01
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(1e-05, 1), 0.0, 0.0, 0, 0, Vector2(0.202673, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Checkpoint" type="Node2D" groups=["checkpointGroup"]]
+script = ExtResource("1_q4v6b")
+
+[node name="checkSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_bc5x7")
+centered = false
+hframes = 2
+
+[node name="CheckHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1am6e")
+bus = &"SoundEffects"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 21.5)
+shape = SubResource("RectangleShape2D_bwmd5")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(16, 16)
+emitting = false
+amount = 20
+lifetime = 1.89
+one_shot = true
+speed_scale = 1.22
+explosiveness = 0.81
+randomness = 0.33
+texture = ExtResource("4_0v3np")
+direction = Vector2(1.239, -90)
+gravity = Vector2(0, 110)
+initial_velocity_min = 121.24
+initial_velocity_max = 121.24
+angular_velocity_min = 613.13
+angular_velocity_max = 613.13
+linear_accel_min = 24.22
+linear_accel_max = 24.22
+radial_accel_min = -27.34
+angle_min = -67.5
+scale_amount_max = 4.0
+color = Color(0.0313726, 0.705882, 1, 1)
+hue_variation_min = -0.27
+hue_variation_max = 0.1
+hue_variation_curve = SubResource("Curve_xywui")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(16, 16)
+scale = Vector2(10.4, 9.6)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

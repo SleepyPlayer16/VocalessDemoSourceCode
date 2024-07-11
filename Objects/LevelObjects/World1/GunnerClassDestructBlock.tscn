@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=3 uid="uid://qv46qybrwgiu"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/GunnerClassDestructBlock.gd" id="1_i1x4e"]
+[ext_resource type="Texture2D" uid="uid://dl5lejbo1irgv" path="res://Sprites/StageObjects/brokenPillar.png" id="2_sp6k2"]
+[ext_resource type="AudioStream" uid="uid://du0q0oisvj1uf" path="res://Sounds/sfx_wallDestroy.wav" id="3_kjiki"]
+[ext_resource type="Texture2D" uid="uid://bcr4ck77n2vno" path="res://Sprites/StageObjects/debris2.png" id="4_8bqs5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upok1"]
+size = Vector2(16, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_35lr3"]
+size = Vector2(16, 32)
+
+[node name="DestructBlock" type="StaticBody2D"]
+script = ExtResource("1_i1x4e")
+
+[node name="GunnerClassDestructBlock" type="Sprite2D" parent="."]
+texture = ExtResource("2_sp6k2")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_upok1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_35lr3")
+
+[node name="WallDestroy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kjiki")
+volume_db = -8.0
+pitch_scale = 0.74
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 12
+lifetime = 0.3
+one_shot = true
+speed_scale = 0.5
+explosiveness = 1.0
+randomness = 0.95
+lifetime_randomness = 1.0
+texture = ExtResource("4_8bqs5")
+emission_shape = 1
+emission_sphere_radius = 0.01
+direction = Vector2(0, -2)
+spread = 168.22
+initial_velocity_min = 112.14
+initial_velocity_max = 289.71
+scale_amount_min = 0.2
+scale_amount_max = 1.2
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
+scale = Vector2(13.1, 8.9)
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

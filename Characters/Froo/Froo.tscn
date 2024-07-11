@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://buusafgd3d12v"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfontlotdumw1" path="res://Characters/Froo/sprites/spriteFrames.tres" id="1_lyv75"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_wpkb0"]
+[ext_resource type="Texture2D" uid="uid://djowtrij70vgp" path="res://Characters/Froo/Palettes/pal_0.png" id="2_u2xda"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s5sni"]
+shader = ExtResource("1_wpkb0")
+shader_parameter/palette = ExtResource("2_u2xda")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_u8pho"]
+blend_mode = 1
+
+[node name="Froo" type="AnimatedSprite2D"]
+clip_children = 2
+material = SubResource("ShaderMaterial_s5sni")
+sprite_frames = ExtResource("1_lyv75")
+animation = &"Win"
+
+[node name="PhantomBoostEffect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_u8pho")
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 18.0
+color = Color(0.0117647, 0.807843, 0.741176, 0)

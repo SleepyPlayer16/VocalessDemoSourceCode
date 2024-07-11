@@ -1,0 +1,15 @@
+{
+    "character_sprite_data": {
+        "character_id":"3",
+        "character_name":"frog",
+        "walkhframes":6, 
+        "idlehframes":4, 
+        "jumphframes":1,
+        "dashhframes":1,
+        "tripframes":4, 
+        "idle_stop_frame":3,
+        "djumpframes":1,
+        "dashUpFrames":5,
+        "dashDownFrames":5
+    }
+}

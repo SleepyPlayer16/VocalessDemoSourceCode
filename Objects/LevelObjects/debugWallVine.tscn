@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnesdt8epm8gq"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/wallVine.gd" id="1_4j7f8"]
+[ext_resource type="Texture2D" uid="uid://bhdhtrmbdq8tj" path="res://Sprites/Tilesets/World_SolarCity/Vines.png" id="2_30uk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_165l0"]
+size = Vector2(32, 32)
+
+[node name="debugWallVine" type="StaticBody2D"]
+script = ExtResource("1_4j7f8")
+
+[node name="DebugWallVines" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-24, -16)
+texture = ExtResource("2_30uk8")
+centered = false
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_165l0")

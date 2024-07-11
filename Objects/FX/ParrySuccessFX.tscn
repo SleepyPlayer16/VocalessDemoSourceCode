@@ -1,0 +1,92 @@
+[gd_scene load_steps=14 format=3 uid="uid://bgbqham47fq33"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/ParrySuccessFX.gd" id="1_fiyab"]
+[ext_resource type="Texture2D" uid="uid://db48tb50381hd" path="res://Sprites/FX/spr_parryFX.png" id="1_wieiw"]
+[ext_resource type="Texture2D" uid="uid://bj5vgd13hhh00" path="res://Sprites/FX/spr_trickFX.png" id="2_2ay08"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehmtw"]
+atlas = ExtResource("1_wieiw")
+region = Rect2(0, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0jcn"]
+atlas = ExtResource("1_wieiw")
+region = Rect2(32, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eo3k"]
+atlas = ExtResource("1_wieiw")
+region = Rect2(64, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ybnv"]
+atlas = ExtResource("1_wieiw")
+region = Rect2(96, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rchjs"]
+atlas = ExtResource("2_2ay08")
+region = Rect2(0, 0, 44, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sr7b1"]
+atlas = ExtResource("2_2ay08")
+region = Rect2(44, 0, 44, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_81num"]
+atlas = ExtResource("2_2ay08")
+region = Rect2(88, 0, 44, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7ccd"]
+atlas = ExtResource("2_2ay08")
+region = Rect2(132, 0, 44, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjyp2"]
+atlas = ExtResource("2_2ay08")
+region = Rect2(176, 0, 44, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u3rxv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehmtw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u0jcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eo3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ybnv")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rchjs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sr7b1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_81num")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7ccd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjyp2")
+}],
+"loop": false,
+"name": &"strikePose",
+"speed": 6.0
+}]
+
+[node name="ParrySuccessFX" type="AnimatedSprite2D"]
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_u3rxv")
+animation = &"strikePose"
+frame = 4
+frame_progress = 1.0
+speed_scale = 2.0
+script = ExtResource("1_fiyab")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

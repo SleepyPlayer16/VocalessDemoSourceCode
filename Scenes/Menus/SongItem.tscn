@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://dsef3rtkhsxgy"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/SongItem.gd" id="2_3lfat"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/rainbowShader.gdshader" id="2_6haie"]
+[ext_resource type="Texture2D" uid="uid://bd3bkxmvhdawu" path="res://Sprites/Menu/spr_menuSongItem.png" id="2_miani"]
+[ext_resource type="Texture2D" uid="uid://cxpbxgs3tsyf3" path="res://Sprites/Menu/spr_levelNumbers.png" id="3_spoi3"]
+[ext_resource type="Texture2D" uid="uid://by8mnwehoyrce" path="res://Sprites/Menu/spr_rankings.png" id="4_7x0o3"]
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="5_jj3d8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg3ct"]
+shader = ExtResource("2_6haie")
+shader_parameter/strength = 0.761
+shader_parameter/speed = 0.15
+shader_parameter/angle = 0.0
+shader_parameter/pixel_size = 0.035
+
+[node name="SongItem" type="Sprite2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_miani")
+centered = false
+hframes = 2
+script = ExtResource("2_3lfat")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+show_behind_parent = true
+material = SubResource("ShaderMaterial_dg3ct")
+custom_minimum_size = Vector2(480, 0)
+offset_right = 480.0
+offset_bottom = 39.0
+color = Color(1, 0, 0, 1)
+
+[node name="SprLevelNumbers" type="Sprite2D" parent="."]
+position = Vector2(30, 4)
+texture = ExtResource("3_spoi3")
+centered = false
+hframes = 5
+
+[node name="SprLevelName" type="Sprite2D" parent="."]
+position = Vector2(80, 4)
+centered = false
+
+[node name="SprRankings" type="Sprite2D" parent="."]
+position = Vector2(261, 4)
+texture = ExtResource("4_7x0o3")
+centered = false
+hframes = 7
+
+[node name="Deaths" type="RichTextLabel" parent="."]
+offset_left = 337.0
+offset_top = 14.5
+offset_right = 377.0
+offset_bottom = 30.5
+theme_override_fonts/normal_font = ExtResource("5_jj3d8")
+theme_override_font_sizes/normal_font_size = 16
+text = "0"
+
+[node name="Parries" type="RichTextLabel" parent="."]
+offset_left = 376.0
+offset_top = 14.5
+offset_right = 416.0
+offset_bottom = 30.5
+theme_override_fonts/normal_font = ExtResource("5_jj3d8")
+theme_override_font_sizes/normal_font_size = 16
+text = "0"
+
+[node name="Time" type="RichTextLabel" parent="."]
+offset_left = 409.0
+offset_top = 15.0
+offset_right = 479.0
+offset_bottom = 31.0
+theme_override_fonts/normal_font = ExtResource("5_jj3d8")
+theme_override_font_sizes/normal_font_size = 16
+text = "00:00"

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmqqpicukxx4l"]
+
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="1_fd5te"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Other/ScoreRichText.gd" id="1_npvfq"]
+
+[node name="ScoreRichText" type="RichTextLabel"]
+clip_contents = false
+offset_left = -71.0
+offset_top = -16.0
+offset_right = 72.0
+offset_bottom = 16.0
+pivot_offset = Vector2(71, 16)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("1_fd5te")
+bbcode_enabled = true
+text = "sadadsasad"
+script = ExtResource("1_npvfq")

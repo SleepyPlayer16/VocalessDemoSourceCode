@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://ccqwx3gp1pfuy"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/tutoiralScreen.gd" id="1_jydrs"]
+[ext_resource type="Texture2D" uid="uid://cgb4rephndegr" path="res://Sprites/StageObjects/pr_tutorialSign.png" id="2_gi0xq"]
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="3_68m5e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cxhg"]
+atlas = ExtResource("2_gi0xq")
+region = Rect2(0, 0, 40, 56)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3yok"]
+atlas = ExtResource("2_gi0xq")
+region = Rect2(40, 0, 40, 56)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flp6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cxhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3yok")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20a4m"]
+radius = 20.0
+
+[node name="tutoiralScreen" type="Node2D"]
+script = ExtResource("1_jydrs")
+
+[node name="Screen" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_flp6q")
+autoplay = "default"
+frame_progress = 0.172807
+centered = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 30
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 40.0
+offset_top = 368.0
+offset_right = 920.0
+offset_bottom = 528.0
+color = Color(0.0901961, 0, 0.0901961, 0.756863)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = 862.0
+offset_bottom = 148.0
+theme_override_fonts/normal_font = ExtResource("3_68m5e")
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "SAMPLE TEXT"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(20, 36)
+shape = SubResource("CircleShape2D_20a4m")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2idwjqhte7w7"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/StrumBar/noteCircleTest.gd" id="1_16qe0"]
+[ext_resource type="Texture2D" uid="uid://cbmbabfnuvj85" path="res://Sprites/HUD/spr_new_note.png" id="2_7movt"]
+[ext_resource type="Texture2D" uid="uid://dq3pw0psil2qs" path="res://Sprites/HUD/testCircle.png" id="3_2ddu7"]
+
+[node name="NoteCircleTest" type="Node2D"]
+script = ExtResource("1_16qe0")
+
+[node name="SprNewNote" type="Sprite2D" parent="."]
+texture = ExtResource("2_7movt")
+hframes = 8
+
+[node name="TestCircle" type="Sprite2D" parent="."]
+top_level = true
+z_index = -1
+position = Vector2(240, 136)
+scale = Vector2(2, 2)
+texture = ExtResource("3_2ddu7")

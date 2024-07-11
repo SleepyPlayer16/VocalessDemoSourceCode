@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://duy2tbsvr3l0b"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Player/Scarf.gd" id="1_yesy4"]
+
+[sub_resource type="Animation" id="Animation_sqks5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [PackedVector2Array(88.6032, -1.67519, 71.0916, 6.32481, 53.58, 12.3248)]
+}
+
+[sub_resource type="Animation" id="Animation_7y2op"]
+resource_name = "wave"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Line2D:points")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [PackedVector2Array(88.6032, -1.67519, 71.0916, 6.32481, 53.58, 12.3248), PackedVector2Array(88.6032, -1.67519, 71.0916, 6.32481, 53.58, 12.3248)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dayp5"]
+_data = {
+"RESET": SubResource("Animation_sqks5"),
+"wave": SubResource("Animation_7y2op")
+}
+
+[node name="Scarf" type="Node2D"]
+position = Vector2(-242.043, -31.5717)
+scale = Vector2(4, 4)
+script = ExtResource("1_yesy4")
+
+[node name="Line2D" type="Line2D" parent="."]
+position = Vector2(52.3914, 5.56812)
+scale = Vector2(0.11421, 1)
+points = PackedVector2Array(88.6032, -1.67519, 71.0916, 6.32481, 53.58, 12.3248)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dayp5")
+}

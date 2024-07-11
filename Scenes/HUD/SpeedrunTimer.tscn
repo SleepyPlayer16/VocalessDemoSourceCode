@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://fbgbjf123rh1"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/SpeedrunTimer.gd" id="1_2okja"]
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="2_fm4o8"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+process_mode = 3
+layer = 51
+visible = false
+script = ExtResource("1_2okja")
+
+[node name="TimerText" type="RichTextLabel" parent="."]
+clip_contents = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -532.0
+offset_right = 272.0
+offset_bottom = -452.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+theme_override_colors/font_outline_color = Color(0.290196, 0.0431373, 0.227451, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("2_fm4o8")
+text = "	00:00"

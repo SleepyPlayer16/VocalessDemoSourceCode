@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bow5mrvip8vkx"]
+
+[ext_resource type="Texture2D" uid="uid://b6w4dr8duqrig" path="res://Sprites/Menu/team_logo.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/MainMenuScripts/octaveIntro.gd" id="2"]
+
+[node name="OctaveIntro" type="Node2D"]
+
+[node name="blackBack" type="ColorRect" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="spr_octaveIntro" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(480, 270)
+texture = ExtResource("1")
+script = ExtResource("2")

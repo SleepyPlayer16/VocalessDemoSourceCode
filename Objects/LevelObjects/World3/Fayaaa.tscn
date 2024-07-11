@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Texture2D" uid="uid://bq1apwpn2t1ek" path="res://Sprites/StageObjects/spr_fire.png" id="1_k4qxy"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Obstacles/genericObstacle.gd" id="2_x0a2q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5kpft"]
+atlas = ExtResource("1_k4qxy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btyp4"]
+atlas = ExtResource("1_k4qxy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0jpp"]
+atlas = ExtResource("1_k4qxy")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yxc5p"]
+atlas = ExtResource("1_k4qxy")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5mdpk"]
+atlas = ExtResource("1_k4qxy")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kg7tt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5kpft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btyp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0jpp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yxc5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5mdpk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x3du"]
+size = Vector2(24, 12)
+
+[node name="Fayaaa" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_kg7tt")
+autoplay = "default"
+frame_progress = 0.712504
+script = ExtResource("2_x0a2q")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_7x3du")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

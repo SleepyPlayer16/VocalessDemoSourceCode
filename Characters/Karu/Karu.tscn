@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl25seetbunoj"]
+
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_1w178"]
+[ext_resource type="SpriteFrames" uid="uid://bc7exwssbe0cl" path="res://Characters/Karu/Sprites/spriteFrames.tres" id="1_gfe3e"]
+[ext_resource type="Texture2D" uid="uid://dm7jsy4a462fg" path="res://Characters/Karu/Palettes/pal_0.png" id="2_dcnbt"]
+[ext_resource type="Texture2D" uid="uid://ctcbgcb41up3c" path="res://Sprites/Misc/spr_altItems.png" id="4_13uai"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpogc"]
+shader = ExtResource("1_1w178")
+shader_parameter/palette = ExtResource("2_dcnbt")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xrjhk"]
+blend_mode = 1
+
+[node name="Karu" type="AnimatedSprite2D"]
+clip_children = 2
+material = SubResource("ShaderMaterial_gpogc")
+sprite_frames = ExtResource("1_gfe3e")
+animation = &"Stomp"
+
+[node name="PhantomBoostEffect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_xrjhk")
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 18.0
+color = Color(0.0117647, 0.807843, 0.741176, 0)
+
+[node name="SprAltItems" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(-11, -14)
+texture = ExtResource("4_13uai")
+centered = false
+hframes = 3

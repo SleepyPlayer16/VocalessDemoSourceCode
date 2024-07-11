@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterController" load_steps=2 format=3 uid="uid://bk6md1hl56ys1"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterScripts/CharacterManager.gd" id="1_2jc4f"]
+
+[resource]
+script = ExtResource("1_2jc4f")
+maxWalkVelocity = 0.0
+jump_velocity = 0.0
+maxJumps = 0
+maxDashDistance = 0.0
+character_class = ""
+canWallJump = false
+portrait = ""

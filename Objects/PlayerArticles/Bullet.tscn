@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxyrr1ekcriqn"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Player/Bullet.gd" id="1_7w4rp"]
+[ext_resource type="Texture2D" uid="uid://cp2decn27hmb1" path="res://Sprites/character_abilities/spr_bullet.png" id="2_qoeso"]
+[ext_resource type="AudioStream" uid="uid://buyqhy14ab5t5" path="res://Sounds/sfx_bullet.wav" id="4_1u4n2"]
+[ext_resource type="PackedScene" uid="uid://sacufomskuxr" path="res://Objects/FX/DashLine.tscn" id="4_tm8r7"]
+[ext_resource type="AudioStream" uid="uid://du0q0oisvj1uf" path="res://Sounds/sfx_wallDestroy.wav" id="5_gyg4t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2o241"]
+radius = 4.0
+
+[node name="Bullet" type="Node2D"]
+top_level = true
+script = ExtResource("1_7w4rp")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(960, 0)
+collision_mask = 3
+
+[node name="sprBullet" type="Sprite2D" parent="."]
+z_index = 30
+texture = ExtResource("2_qoeso")
+
+[node name="BulletCol" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BulletCol"]
+shape = SubResource("CircleShape2D_2o241")
+
+[node name="DashLine" parent="." instance=ExtResource("4_tm8r7")]
+width = 2.0
+targetPath = NodePath("../sprBullet")
+trailLength = 4
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = 30
+emitting = false
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 30.0
+gravity = Vector2(1.062, 0)
+initial_velocity_max = 78.94
+radial_accel_min = -33.33
+radial_accel_max = 35.09
+scale_amount_min = 1.5
+scale_amount_max = 4.5
+color = Color(1, 1, 0, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+z_index = 30
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+spread = 30.0
+gravity = Vector2(1.062, 0)
+initial_velocity_max = 78.94
+radial_accel_min = -33.33
+radial_accel_max = 35.09
+scale_amount_min = 1.5
+scale_amount_max = 4.5
+color = Color(1, 1, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1u4n2")
+
+[node name="WallDestroy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_gyg4t")
+volume_db = -8.0
+pitch_scale = 0.74
+
+[connection signal="area_entered" from="BulletCol" to="." method="_on_bullet_col_area_entered"]
+[connection signal="body_entered" from="BulletCol" to="." method="_on_bullet_col_body_entered"]

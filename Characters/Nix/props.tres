@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterController" load_steps=2 format=3 uid="uid://2sbl30uvy0ak"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterScripts/CharacterManager.gd" id="1_okn2v"]
+
+[resource]
+script = ExtResource("1_okn2v")
+maxWalkVelocity = 3.4
+jump_velocity = 405.0
+maxJumps = 2
+maxDashDistance = 7.5
+character_class = "Dasher"
+canWallJump = true
+portrait = "res://Characters/Nix/Sprites/Portrait.png"
+hudPortrait = "res://Characters/Nix/Sprites/spr_hudPortrait.png"
+phantomColorPalette = "res://Characters/Karu/Palettes/pal_phantom.png"

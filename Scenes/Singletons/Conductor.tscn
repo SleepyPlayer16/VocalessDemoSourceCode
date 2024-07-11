@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://fhm8p67rwmvy"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/Conductor.gd" id="1_b44t3"]
+[ext_resource type="AudioStream" uid="uid://dts2xorjtuun" path="res://Sounds/Metronome.wav" id="2_cvqex"]
+[ext_resource type="AudioStream" uid="uid://c18n21taj6p4j" path="res://Sounds/Menu/sfx_menuMove.wav" id="3_sarj7"]
+[ext_resource type="AudioStream" uid="uid://5tgdnrmo83y0" path="res://Sounds/Menu/sfx_menuConfirmShort.wav" id="4_4x1um"]
+[ext_resource type="AudioStream" uid="uid://uee8303jvq6c" path="res://Sounds/Menu/sfx_menuGoBack.wav" id="5_wfbuo"]
+[ext_resource type="AudioStream" uid="uid://yoo6j5k6rtit" path="res://Sounds/sfx_heyChant.wav" id="6_ffflv"]
+[ext_resource type="AudioStream" uid="uid://b08whr61dqbbf" path="res://Music/mus_mainmenuNew.ogg" id="7_xori3"]
+
+[node name="Conductor" type="AudioStreamPlayer"]
+volume_db = -2.179
+bus = &"Music"
+script = ExtResource("1_b44t3")
+
+[node name="Metronome" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_cvqex")
+bus = &"SoundEffects"
+
+[node name="MenuMove" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_sarj7")
+volume_db = -6.0
+bus = &"SoundEffects"
+
+[node name="MenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4x1um")
+volume_db = 2.0
+bus = &"SoundEffects"
+
+[node name="MenuSelect2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_wfbuo")
+volume_db = 2.0
+bus = &"SoundEffects"
+
+[node name="HeyChant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ffflv")
+volume_db = 2.0
+bus = &"SoundEffects"
+
+[node name="MAINMENU" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_xori3")
+volume_db = -3.0
+bus = &"Music"

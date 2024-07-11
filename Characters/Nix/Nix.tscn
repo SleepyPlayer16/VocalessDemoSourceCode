@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5qq8nixcprlf"]
+
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwap.gdshader" id="1_341ot"]
+[ext_resource type="Texture2D" uid="uid://db4otcprfdd8o" path="res://Characters/Nix/Palettes/pal_0.png" id="2_81al3"]
+[ext_resource type="SpriteFrames" uid="uid://dbxmv1353op45" path="res://Characters/Nix/Sprites/spriteFramesNix.tres" id="3_wpari"]
+[ext_resource type="Texture2D" uid="uid://ctcbgcb41up3c" path="res://Sprites/Misc/spr_altItems.png" id="4_ce8tx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpogc"]
+shader = ExtResource("1_341ot")
+shader_parameter/palette = ExtResource("2_81al3")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xrjhk"]
+blend_mode = 1
+
+[node name="Nix" type="AnimatedSprite2D"]
+clip_children = 2
+material = SubResource("ShaderMaterial_gpogc")
+sprite_frames = ExtResource("3_wpari")
+animation = &"Death"
+
+[node name="PhantomBoostEffect" type="ColorRect" parent="."]
+material = SubResource("CanvasItemMaterial_xrjhk")
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 16.0
+offset_bottom = 18.0
+color = Color(0.0117647, 0.807843, 0.741176, 0)
+
+[node name="SprAltItems" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(-11, -14)
+texture = ExtResource("4_ce8tx")
+centered = false
+hframes = 3

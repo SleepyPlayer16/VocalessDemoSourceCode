@@ -1,0 +1,51 @@
+[
+  { "CharacterLeft": "Karu", "CharacterRight": "Shura" },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Hello! I'm kinda lost, I don't know what's going on.",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "I was riding my motorcycle and I suddenly went through a portal that appeared out of nowhere.",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "I went into a store real quick to ask for information about this place, I was there for just one minute!",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "And when I came back outside I saw a bald guy stealing my motorcycle!!!",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Shura",
+	"SecondaryName": "",
+	"Text": "Can you believe it!?",
+	"Emotion": "Neutral",
+	"Side": "Right",
+	"offset": 0
+  },
+  {
+	"Name": "Karu",
+	"SecondaryName": "",
+	"Text": "...",
+	"Emotion": "Neutral",
+	"Side": "Left",
+	"offset": 0
+  }
+]

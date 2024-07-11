@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cm5wybyjp0o1v"]
+
+[ext_resource type="Script" path="res://Scripts/AdQuestion.gd" id="1_0fkfn"]
+[ext_resource type="Texture2D" uid="uid://bjdnksxkdqa11" path="res://Sprites/Menu/spr_adQuestion.png" id="1_u40r3"]
+[ext_resource type="AudioStream" uid="uid://bbvy2d4m02c0n" path="res://Sounds/sfx_kill.wav" id="3_34srv"]
+
+[node name="AdQuestion" type="Node2D"]
+script = ExtResource("1_0fkfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.001, 0.001)
+texture = ExtResource("1_u40r3")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_34srv")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ntn3bwi7rmfy"]
+
+[ext_resource type="Texture2D" uid="uid://cwjlkhn7g6o5o" path="res://Sprites/FX/spr_chargeEffect.png" id="1_h3fat"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cakrq"]
+blend_mode = 1
+
+[node name="chargeEffect" type="CPUParticles2D"]
+modulate = Color(0, 0.615686, 1, 0.129412)
+material = SubResource("CanvasItemMaterial_cakrq")
+amount = 64
+preprocess = 2.0
+speed_scale = 1.2
+texture = ExtResource("1_h3fat")
+emission_shape = 3
+emission_rect_extents = Vector2(32, 64)
+spread = 180.0
+gravity = Vector2(0, -90)

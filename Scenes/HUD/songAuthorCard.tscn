@@ -1,0 +1,140 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtwcwhgjc133c"]
+
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="1_1yxer"]
+[ext_resource type="Script" path="res://Scripts/Systems/songAuthorCard.gd" id="1_rfjcn"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/rainbowShader.gdshader" id="2_t2rw0"]
+[ext_resource type="Texture2D" uid="uid://dq4qyjl1q8edd" path="res://Sprites/HUD/spr_musnote.png" id="4_7jcfu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_to4tr"]
+shader = ExtResource("2_t2rw0")
+shader_parameter/strength = 0.765
+shader_parameter/speed = 0.1
+shader_parameter/angle = 187.347
+shader_parameter/pixel_size = 0.01
+
+[sub_resource type="Animation" id="Animation_0elg4"]
+resource_name = "Enter"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(0.0769465, 1),
+"update": 0,
+"values": [Vector2(280, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wrj4o"]
+resource_name = "Exit"
+length = 1.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4),
+"transitions": PackedFloat32Array(0.0769465, 0.0769465),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(282, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cwh6l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Card:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(280, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_afbp1"]
+_data = {
+"Enter": SubResource("Animation_0elg4"),
+"Exit": SubResource("Animation_wrj4o"),
+"RESET": SubResource("Animation_cwh6l")
+}
+
+[node name="songAuthorCard" type="CanvasLayer"]
+script = ExtResource("1_rfjcn")
+
+[node name="Card" type="Node2D" parent="."]
+position = Vector2(280, 0)
+
+[node name="ColorRect3" type="ColorRect" parent="Card"]
+offset_left = 678.0
+offset_top = 38.0
+offset_right = 960.0
+offset_bottom = 122.0
+mouse_filter = 2
+color = Color(0.301961, 0.0470588, 0.247059, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="Card"]
+material = SubResource("ShaderMaterial_to4tr")
+offset_left = 680.0
+offset_top = 40.0
+offset_right = 960.0
+offset_bottom = 120.0
+mouse_filter = 2
+color = Color(0.211765, 0.117647, 0.27451, 0.388235)
+
+[node name="ColorRect" type="ColorRect" parent="Card"]
+offset_left = 680.0
+offset_top = 40.0
+offset_right = 960.0
+offset_bottom = 120.0
+mouse_filter = 2
+color = Color(0.211765, 0.117647, 0.721569, 0.317647)
+
+[node name="SongName" type="RichTextLabel" parent="Card"]
+clip_contents = false
+offset_left = 722.0
+offset_top = 48.0
+offset_right = 986.0
+offset_bottom = 112.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.933333, 0.901961, 0.160784, 1)
+theme_override_colors/font_outline_color = Color(0.0196078, 0.109804, 0.254902, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("1_1yxer")
+theme_override_font_sizes/normal_font_size = 32
+text = "Song Name"
+
+[node name="Author" type="RichTextLabel" parent="Card"]
+clip_contents = false
+offset_left = 688.0
+offset_top = 82.0
+offset_right = 952.0
+offset_bottom = 146.0
+mouse_filter = 2
+theme_override_colors/default_color = Color(0.611765, 1, 0.909804, 1)
+theme_override_colors/font_outline_color = Color(0.0196078, 0.109804, 0.254902, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/normal_font = ExtResource("1_1yxer")
+theme_override_font_sizes/normal_font_size = 32
+text = "Author name"
+
+[node name="musNote" type="Sprite2D" parent="Card"]
+position = Vector2(680, 48)
+scale = Vector2(2, 2)
+texture = ExtResource("4_7jcfu")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_afbp1")
+}
+autoplay = "Enter"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

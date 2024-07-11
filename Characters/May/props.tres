@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CharacterController" load_steps=2 format=3 uid="uid://klnsjht5ilpt"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterScripts/CharacterManager.gd" id="1_nfq4g"]
+
+[resource]
+script = ExtResource("1_nfq4g")
+maxWalkVelocity = 3.5
+jump_velocity = 300.0
+maxJumps = 3
+maxDashDistance = 8.5
+character_class = "Dasher"
+canWallJump = true
+portrait = "res://Characters/May/Sprites/Portrait.png"
+hudPortrait = "res://Characters/May/Sprites/spr_hudPortrait.png"
+phantomColorPalette = "res://Characters/Liz/Palettes/pal_phantom.png"

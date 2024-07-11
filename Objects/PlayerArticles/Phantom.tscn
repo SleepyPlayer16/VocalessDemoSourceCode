@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://cq81ywujutc5l"]
+
+[ext_resource type="SpriteFrames" uid="uid://bc7exwssbe0cl" path="res://Characters/Karu/Sprites/spriteFrames.tres" id="1_3e6ax"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/PaletteSwapGlitchy.gdshader" id="1_4ua3m"]
+[ext_resource type="Texture2D" uid="uid://dma84iqlh3oi" path="res://Characters/Karu/Palettes/Pal_02.png" id="2_b0jgi"]
+[ext_resource type="Script" path="res://Scripts/Gameplay/Player/PhantomPlayer.gd" id="2_wi88o"]
+[ext_resource type="Texture2D" uid="uid://b6qsm6pjo8og8" path="res://Sprites/FX/particleCircle.png" id="5_4530v"]
+[ext_resource type="Texture2D" uid="uid://2xv6bhd5epiu" path="res://Sprites/FX/2dlight.png" id="5_wyp2h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_30mtw"]
+shader = ExtResource("1_4ua3m")
+shader_parameter/resolution = Vector2(16, 16)
+shader_parameter/noise = 0.317
+shader_parameter/distort = 0.167
+shader_parameter/offset = 0.625
+shader_parameter/speed = 7.0
+shader_parameter/glitchFrequency = 0.0
+shader_parameter/palette = ExtResource("2_b0jgi")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_c7x8j"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_8ywg3"]
+colors = PackedColorArray(0.545098, 0.341176, 0.972549, 1, 0.243137, 1, 1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3ejm"]
+size = Vector2(32, 34)
+
+[node name="Phantom" type="AnimatedSprite2D"]
+top_level = true
+clip_children = 2
+material = SubResource("ShaderMaterial_30mtw")
+sprite_frames = ExtResource("1_3e6ax")
+animation = &"Idle"
+frame_progress = 0.0636136
+script = ExtResource("2_wi88o")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+scale = Vector2(0.261719, 0.242188)
+color = Color(0, 0.643137, 0.643137, 1)
+energy = 0.8
+range_z_min = -64
+range_z_max = 64
+texture = ExtResource("5_wyp2h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+material = SubResource("CanvasItemMaterial_c7x8j")
+offset_left = -18.0
+offset_top = -18.0
+offset_right = 22.0
+offset_bottom = 22.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+top_level = true
+position = Vector2(-5, 15)
+amount = 16
+lifetime_randomness = 1.0
+fixed_fps = 60
+texture = ExtResource("5_4530v")
+emission_shape = 1
+emission_sphere_radius = 14.69
+direction = Vector2(0, 0)
+spread = 68.11
+gravity = Vector2(0, -90)
+initial_velocity_min = 27.78
+initial_velocity_max = 27.78
+angular_velocity_min = -579.62
+orbit_velocity_min = 0.25
+orbit_velocity_max = 0.25
+linear_accel_min = -66.66
+linear_accel_max = 18.87
+scale_amount_min = 0.0
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_8ywg3")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+top_level = true
+position = Vector2(1, 18)
+enabled = false
+target_position = Vector2(0, 20)
+
+[node name="PhantomParryArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PhantomParryArea"]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_e3ejm")
+disabled = true
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

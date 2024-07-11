@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci14ll4od6pbt"]
+
+[ext_resource type="Texture2D" uid="uid://cp4l2ogdkoa0n" path="res://Sprites/FX/WalkParticle.png" id="1_bxx11"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_46qqd"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_vryvy"]
+min_value = -1.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="chargeSteam" type="CPUParticles2D"]
+show_behind_parent = true
+z_index = -1
+material = SubResource("CanvasItemMaterial_46qqd")
+position = Vector2(0, -11)
+emitting = false
+amount = 16
+texture = ExtResource("1_bxx11")
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2(0, -500)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+radial_accel_min = -50.0
+radial_accel_max = 50.0
+angle_min = -252.5
+angle_max = 204.7
+scale_amount_min = 0.5
+color = Color(0.733333, 1, 1, 1)
+hue_variation_min = -0.13
+hue_variation_curve = SubResource("Curve_vryvy")
+anim_speed_min = 2.0
+anim_speed_max = 4.0

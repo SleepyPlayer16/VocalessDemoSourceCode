@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnoguinuvcntp"]
+
+[ext_resource type="Script" path="res://Scripts/Systems/ChartDisplay.gd" id="1_a5p0e"]
+[ext_resource type="PackedScene" uid="uid://c3rubejgijcop" path="res://Scenes/HUD/Strumbar.tscn" id="2_xudpr"]
+[ext_resource type="AudioStream" uid="uid://c3owibwbvsrvu" path="res://Music/mus_silence.ogg" id="3_llubc"]
+
+[node name="ChartScene" type="CanvasLayer"]
+process_priority = 6
+process_physics_priority = 6
+layer = 3
+offset = Vector2(-480, 464)
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, -480, 464)
+script = ExtResource("1_a5p0e")
+
+[node name="Strumbar" parent="." instance=ExtResource("2_xudpr")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="Silence" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_llubc")

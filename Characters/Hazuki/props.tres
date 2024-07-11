@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="CharacterController" load_steps=2 format=3 uid="uid://ja2i75ry58ch"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterScripts/CharacterManager.gd" id="1_avdl6"]
+
+[resource]
+script = ExtResource("1_avdl6")
+maxWalkVelocity = 2.0
+jump_velocity = -400.0
+maxJumps = 3
+maxDashDistance = 40.0
+character_class = "Dasher"
+canWallJump = true
+portrait = "res://Characters/Karu/Sprites/PortraitTest.png"

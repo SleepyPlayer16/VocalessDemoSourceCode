@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgj4grl5wpfem"]
+
+[ext_resource type="Texture2D" uid="uid://cp4l2ogdkoa0n" path="res://Sprites/FX/WalkParticle.png" id="1_1t0er"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_s57gn"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[node name="Dust" type="CPUParticles2D"]
+show_behind_parent = true
+material = SubResource("CanvasItemMaterial_s57gn")
+position = Vector2(15, 12)
+emitting = false
+lifetime = 1.2
+texture = ExtResource("1_1t0er")
+gravity = Vector2(0, -90)
+anim_speed_min = 2.0
+anim_speed_max = 2.0

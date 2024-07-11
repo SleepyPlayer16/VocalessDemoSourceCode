@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0ap75h8556jb"]
+
+[ext_resource type="Texture2D" uid="uid://cbmbabfnuvj85" path="res://Sprites/HUD/spr_new_note.png" id="1_rpvhu"]
+[ext_resource type="Script" path="res://Scripts/Systems/StrumBar/Note.gd" id="2_1j2hl"]
+
+[sub_resource type="Animation" id="Animation_l4iln"]
+resource_name = "Hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_od85q"]
+resource_name = "Normal"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_rejcj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xdld"]
+_data = {
+"Hit": SubResource("Animation_l4iln"),
+"Normal": SubResource("Animation_od85q"),
+"RESET": SubResource("Animation_rejcj")
+}
+
+[node name="Note" type="Sprite2D" groups=["Notes"]]
+texture = ExtResource("1_rpvhu")
+hframes = 8
+script = ExtResource("2_1j2hl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2xdld")
+}
+speed_scale = 2.0

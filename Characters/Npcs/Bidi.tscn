@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=3 uid="uid://bsci30rk1y22j"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Npc/Shura.gd" id="1_4bi8t"]
+[ext_resource type="Texture2D" uid="uid://c6vhp3equb3q1" path="res://Sprites/Npcs/spr_bidi.png" id="2_02nfv"]
+[ext_resource type="Texture2D" uid="uid://co18o176807ja" path="res://Sprites/HUD/spr_talkIndicator.png" id="3_v1rlc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ui145"]
+atlas = ExtResource("2_02nfv")
+region = Rect2(64, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjlmd"]
+atlas = ExtResource("2_02nfv")
+region = Rect2(96, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f80m5"]
+atlas = ExtResource("2_02nfv")
+region = Rect2(128, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4u2qq"]
+atlas = ExtResource("2_02nfv")
+region = Rect2(0, 0, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3bi7"]
+atlas = ExtResource("2_02nfv")
+region = Rect2(32, 0, 32, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c81aj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ui145")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjlmd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f80m5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4u2qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3bi7")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q4muh"]
+size = Vector2(36, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hg4qv"]
+atlas = ExtResource("3_v1rlc")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0jrir"]
+atlas = ExtResource("3_v1rlc")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ry11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hg4qv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0jrir")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Bidi" type="Node2D"]
+script = ExtResource("1_4bi8t")
+character = "Bidi"
+dialoguePath = "res://Dialogue/solar_city/BidiNpc.json"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_c81aj")
+animation = &"Idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_q4muh")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -16)
+sprite_frames = SubResource("SpriteFrames_0ry11")
+autoplay = "default"
+frame_progress = 0.177317
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,117 @@
+[gd_scene load_steps=15 format=3 uid="uid://cy883shmjnjyx"]
+
+[ext_resource type="Script" path="res://Scripts/Gameplay/Other/BigIcePillar.gd" id="1_20v6q"]
+[ext_resource type="Texture2D" uid="uid://5vwr0nqoymn4" path="res://Sprites/StageObjects/spr_cannon.png" id="1_vv0f6"]
+[ext_resource type="AudioStream" uid="uid://cs4mcbwnb4fbw" path="res://Sounds/sfx_cannonPrepare.wav" id="3_77ls6"]
+[ext_resource type="AudioStream" uid="uid://b2gvdjdvv4fyl" path="res://Sounds/sfx_cannonShoot.wav" id="3_c2mc5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fg0w7"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(0, 0, 188, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewsax"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(188, 0, 188, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmu42"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(376, 0, 188, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aokta"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(564, 0, 188, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e43td"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(752, 0, 188, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u1cbp"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(940, 0, 188, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ph73b"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(1128, 0, 188, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nag7x"]
+atlas = ExtResource("1_vv0f6")
+region = Rect2(1316, 0, 188, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bmj3f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg0w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewsax")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmu42")
+}],
+"loop": false,
+"name": &"Charge",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aokta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e43td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u1cbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ph73b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nag7x")
+}],
+"loop": false,
+"name": &"Fire",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fg0w7")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pupr8"]
+radius = 23.0
+
+[node name="Cannon" type="Node2D"]
+script = ExtResource("1_20v6q")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bmj3f")
+animation = &"Fire"
+frame = 4
+frame_progress = 1.0
+speed_scale = 2.0
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-59, 0)
+shape = SubResource("CircleShape2D_pupr8")
+
+[node name="Prepare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_77ls6")
+volume_db = 3.0
+bus = &"SoundEffects"
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_c2mc5")
+volume_db = 4.0
+bus = &"SoundEffects"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(18, 5)
+
+[connection signal="animation_finished" from="Sprite2D" to="." method="_on_sprite_2d_animation_finished"]

@@ -1,0 +1,282 @@
+[gd_scene load_steps=31 format=3 uid="uid://ck1o65rtqlrmq"]
+
+[ext_resource type="Texture2D" uid="uid://c7djaqow4lcf2" path="res://Sprites/Intro/8Background.png" id="1_88p66"]
+[ext_resource type="Script" path="res://Scripts/Intro.gd" id="1_lcvex"]
+[ext_resource type="Texture2D" uid="uid://b4td4iw8ugtgh" path="res://Sprites/Intro/8.png" id="2_dh0cy"]
+[ext_resource type="Texture2D" uid="uid://bfm2tj0fojhrg" path="res://Sprites/Intro/spr_layout.png" id="3_3bca0"]
+[ext_resource type="Texture2D" uid="uid://d3bekrrymocnp" path="res://Sprites/Intro/intro1-7.png" id="3_tvni2"]
+[ext_resource type="Texture2D" uid="uid://dgpg5bc3yi0je" path="res://Sprites/Intro/10.png" id="5_2b2ab"]
+[ext_resource type="Texture2D" uid="uid://djvl8q87gdcr4" path="res://Sprites/Intro/9.png" id="5_ptsu1"]
+[ext_resource type="Texture2D" uid="uid://doeawmebxqstr" path="res://Sprites/Intro/12.png" id="6_mspvg"]
+[ext_resource type="AudioStream" uid="uid://dtybpw82a5wtw" path="res://Music/mus_introSongShort.ogg" id="6_rhr0h"]
+[ext_resource type="Texture2D" uid="uid://bm6puxxnqroa4" path="res://Sprites/Intro/13.png" id="7_dr0r7"]
+[ext_resource type="FontFile" uid="uid://b40vcw171lfar" path="res://Fonts/DigitalDisco.ttf" id="7_ejsx5"]
+[ext_resource type="Texture2D" uid="uid://bar27sjcdgcng" path="res://Sprites/Intro/11.png" id="7_ety2m"]
+[ext_resource type="PackedScene" uid="uid://dtwcwhgjc133c" path="res://Scenes/HUD/songAuthorCard.tscn" id="8_wb16j"]
+[ext_resource type="Texture2D" uid="uid://covku5jwlqg7o" path="res://Sprites/Intro/14.png" id="9_qu73o"]
+[ext_resource type="Texture2D" uid="uid://b02tyq74xadr2" path="res://Sprites/Menu/spr_menu_logo.png" id="14_3orfy"]
+[ext_resource type="Texture2D" uid="uid://c0xj4dhdipfou" path="res://Sprites/Intro/spr_noVoiceLogo.png" id="15_nivqq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1ukw"]
+atlas = ExtResource("5_2b2ab")
+region = Rect2(0, 0, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hathg"]
+atlas = ExtResource("6_mspvg")
+region = Rect2(0, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76dsa"]
+atlas = ExtResource("6_mspvg")
+region = Rect2(254, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g44k5"]
+atlas = ExtResource("7_ety2m")
+region = Rect2(0, 0, 254, 190)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_adwmi"]
+atlas = ExtResource("7_dr0r7")
+region = Rect2(0, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8k3e"]
+atlas = ExtResource("7_dr0r7")
+region = Rect2(254, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsj4e"]
+atlas = ExtResource("7_dr0r7")
+region = Rect2(508, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dulx"]
+atlas = ExtResource("7_dr0r7")
+region = Rect2(762, 0, 254, 284)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b4fe"]
+atlas = ExtResource("9_qu73o")
+region = Rect2(0, 0, 254, 190)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pmn6e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1ukw")
+}],
+"loop": false,
+"name": &"10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hathg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76dsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76dsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76dsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76dsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76dsa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76dsa")
+}],
+"loop": false,
+"name": &"11",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g44k5")
+}],
+"loop": false,
+"name": &"11Before",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adwmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adwmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_adwmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8k3e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsj4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dulx")
+}],
+"loop": false,
+"name": &"12",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b4fe")
+}],
+"loop": true,
+"name": &"13",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_dn4gu"]
+resource_name = "FadeInOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro1-7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jkumi"]
+resource_name = "FadeInOut_2"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro1-7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wojy2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Intro1-7:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2pwfy"]
+_data = {
+"FadeInOut": SubResource("Animation_dn4gu"),
+"FadeInOut_2": SubResource("Animation_jkumi"),
+"RESET": SubResource("Animation_wojy2")
+}
+
+[node name="Intro" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_lcvex")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -9.0
+offset_top = -8.0
+offset_right = 493.0
+offset_bottom = 284.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VillainBack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(240, 116)
+texture = ExtResource("1_88p66")
+
+[node name="Villain" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(240, 69)
+texture = ExtResource("2_dh0cy")
+
+[node name="Intro1-7" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(240, 116)
+texture = ExtResource("3_tvni2")
+hframes = 8
+
+[node name="Last" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(240, 116)
+sprite_frames = SubResource("SpriteFrames_pmn6e")
+animation = &"13"
+
+[node name="BookBack" type="ColorRect" parent="."]
+visible = false
+offset_left = 112.0
+offset_top = 21.0
+offset_right = 367.0
+offset_bottom = 220.0
+mouse_filter = 2
+color = Color(0.156863, 0.0392157, 0.317647, 1)
+
+[node name="Book" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(412, 116)
+texture = ExtResource("5_ptsu1")
+metadata/_edit_lock_ = true
+
+[node name="SprLayout" type="Sprite2D" parent="."]
+position = Vector2(240, 135)
+texture = ExtResource("3_3bca0")
+metadata/_edit_lock_ = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_rhr0h")
+bus = &"Music"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2pwfy")
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 42.0
+offset_top = 220.0
+offset_right = 438.0
+offset_bottom = 284.0
+theme_override_fonts/normal_font = ExtResource("7_ejsx5")
+text = "Sample text"
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_right = 479.0
+offset_bottom = 276.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="songAuthorCard" parent="." instance=ExtResource("8_wb16j")]
+songName = "Too! Tragic..."
+authorName = "SleP16"
+
+[node name="Logo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(240, 45.5)
+texture = ExtResource("14_3orfy")
+
+[node name="SprNoVoiceLogo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(240, 120)
+texture = ExtResource("15_nivqq")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
